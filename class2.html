@@ -47,31 +47,125 @@
                     </ul> 
                 </section>
                 <section>
-                    <h3>Functions</h3>
-                    <p>Also known as "procedures"</p>
-                    <p> - A named unit of code that performs a specific task</p>
-                    <p>The following example is a <strong>function definition</strong></p>
-                    <pre><code contenteditable class="python">
-def newline():
-    print ''
-                    </code></pre>
-                    <p>The function definition has the following parts</p>
+                    <h3>What we will cover today</h3>
                     <ul>
-                        <li>The <em>def</em> keyword</li>
-                        <li>The name of the function being defined</li>
-                        <li>A colon, after which one must indent</li>
-                        <li>The function <em>body</em>, which is indented, then unindented when complete</li>
+                        <li class ="fragment">Functions</li>
+                        <li class ="fragment">Conditionals</li>
+                        <li class ="fragment">Loops</li>
                     </ul>
                 </section>
                 <section>
-                    <h3>Function calls</h3>
-                    <p>In this example, one <strong>calls</strong> the function that was previously defined</p>
-                    <pre><code contenteditable class="python">
-newline()
+                    <h3>Functions</h3>
+                    <p>Also known as "procedures"</p>
+                    <p> - A named unit of code that performs a specific task</p>
+                    <p class="fragment">When one uses a function, one makes a function <strong>call</strong></p>
+                    <p class="fragment">We have already made a function call when using the type function</p>
+
+                    <pre><code contenteditable class="fragment python">
+a = 3
+print type(a)
                     </code></pre>
-                    <p class="fragment">To call a function, one uses its name, followed by ()</p>
                 </section>
+
+                <section>
+                    <h3>Function calls</h3>
+                    <pre><code contenteditable class="fragment python">
+a = 3
+print type(a)
+                    </code></pre>
+                    <p class="fragment">A function can take <strong>arguments</strong></p>
+                    <p class="fragment">In the example above, the variable `a` is passed as an argument to the function `type`</p>
+                    <p class="fragment">An argument can be a variable, a literal or any expression. Can also be called <strong>parameters</strong></p>
+                    <pre><code contenteditable class="fragment python">
+int('32')
+str(32)
+
+a = 32
+str(a)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Function definition</h3>
+                    <p>The following example is a <strong>function definition</strong>. This allows us to create our own functions</p>
+                    <pre><code contenteditable class="fragment python">
+def plus_5(x):
+    print x + 5
+                    </code></pre>
+                    <p class="fragment">The function definition has the following parts</p>
+                    <ul>
+                        <li class="fragment">The <strong>def</strong> keyword signifying that we are defining a function</li>
+                        <li class="fragment">The name of the function being defined - This function is called `plus_5`</li>
+                        <li class="fragment">The argument or list of arguments in parentheses - This function takes the argument `x`</li>
+                        <li class="fragment">The function <strong>body</strong>, which is a block of indented code of one or more lines that is executed when the function is called. - This function has `print x + 5` as its function body</li>
+                    </ul>
+                </section>
+                <!-- Break: Write a function that takes a value, does simple math and prints the answer -->
+
                 <!-- Block 2 -->
+                <section>
+                    <h3>Function returns</h3>
+                    <p>A function can also <strong>return</strong> a value</p>
+                    <p class="fragment">To do this, one uses the <strong>return</strong> keyword</p>
+    
+                    <pre><code contenteditable class="fragment python">
+def plus_5(x):
+    return x + 5
+
+y = plus_5(4)
+print y
+                    </code></pre>
+                    <p class="fragment">This allows us to call a function to obtain a value for later use.</p>
+                    <p class="fragment">In this example, y is set to the value 9</p>
+                    <p class="fragment">To determine what a function will return, we can use a mental model called the <strong>substitution method</strong>.</p>
+                    <p class="fragment">A function that does not use return, returns `None`. (In Python, this represents something without a value)</p>
+                </section>
+
+                <section>
+                    <h3>Functions with no arguments or several</h3>
+                    <p>A function does not have to take arguments, as in the following example:
+                    <pre><code contenteditable class="fragment python">
+def newline():
+    print ''
+                    </code></pre>
+                    <p class="fragment">This is useful when the function does some work but doesn't need any parameters. i.e. The function is intended to always do the same thing</p>
+                    <p class="fragment">A function can also take more than one arguments separated by commas. For example:</p>
+                    <pre><code contenteditable class="fragment python">
+def find_rectangle_area(width, height):
+    return width * height
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Import statements</h3>
+                    <p>The <strong>import</strong> statement allows us to use Python code that is defined in one file in other place.</p>
+                    <p class="fragment">The <strong>from</strong> keyword allows us to only import parts of a Python file</p>
+                    <pre><code contenteditable class="fragment python">
+# In knights.py
+def shrubbery():
+    print "I am a shrubber"
+
+def ni()
+    print "Ni!" * 3
+
+# In a Python shell, ran from the same directory
+import knights
+knights.shrubbery()
+knights.ni()
+
+# or
+from knights import shrubbery
+shrubbery()
+                    </code></pre>
+                </section>
+
+                <!-- Block 3 -->
+                <section>
+                    <h3>Conditionals</h3>
+                    <p>When we want something to happen dependending on certain criteria, we use a <strong>conditional</strong></p>
+                    <p class="fragment">We achieve this using <strong>if</strong> statements</p>
+                </section>
+
                 <section>
                 </section>
             </div>
@@ -94,7 +188,7 @@ newline()
                 progress: true,
                 history: true,
 
-                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                theme: Reveal.getQueryHash().theme, // available theme are in /css/themes
                 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
 
                 // Optional libraries used to extend on reveal.js
