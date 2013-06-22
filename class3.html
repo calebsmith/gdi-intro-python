@@ -60,6 +60,178 @@
                     <p>Functions can also call other functions.</p>
                     <p class="fragment">One can use this to break up tasks into small pieces that rely on others to do their work.</p>
                 </section>
+
+                <!-- Block 3 -->
+                <section>
+                    <h3>Lists of ... Lists</h3>
+                    <p>Lists can contain not only numbers or strings, but also other lists.</p>
+                    <p class="fragment">Such a structure is said to be  <strong>nested</strong></p>
+                    <p class="fragment">The following is a list of lists that is defined literally:</p>
+                    <pre><code contenteditable class="fragment python">
+game_board = [
+    ['O', 'X', ' '],
+    [' ', 'X', ' '],
+    [' ', ' ', ' '],
+]
+                    </code></pre>
+                    <p class="fragment">This can be indexed successively with <code>game_board[0][1]</code></p>
+                </section>
+                <section>
+                    <h3>Nested Lists continued</h3>
+                    <p>A list can be appended to a list as well</p>
+                    <pre><code contenteditable class="fragment python">
+mary_to_dos = ['eat', 'work', 'pick up laundry', 'care for baby', 'sleep']
+fran_to_dos = ['eat', 'work', 'call plumber', 'sleep']
+baby_to_dos = ['eat', 'sleep']
+
+all_to_dos = []
+all_to_dos.append(mary_to_dos)
+all_to_dos.append(fran_to_dos)
+all_to_dos.append(baby_to_dos)
+
+print all_to_dos
+
+for to_dos in all_to_dos:
+    for to_do in to_dos:
+        print to_do
+                    </code></pre>
+                    <p class="fragment">What if we want to <strong>flatten</strong> the to do's?</p>
+                    <p class="fragment">What if we want the to do's to be unique?</p>
+                </section>
+
+                <section>
+                    <h3>Lists of Dictionaries</h3>
+                    <p>One of the most common and useful nested data structures, is a list of dictionaries</p>
+                    <pre><code contenteditable class="fragment python">
+card_a = {
+    'suit': 'spades',
+    'number': 4,
+}
+
+card_b = {
+    'suit': 'hearts',
+    'number': 8,
+}
+
+hand = [card_a, card_b]
+
+print 'The hand contains:'
+for card in hand:
+    print 'A {0} of {1}'.format(card['number'], card['suit'])
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Dictionary of Lists</h3>
+                    <p>A dictionary can also contain values that are themselves other collections, such as lists.</p>
+                    <p class="fragment">Let's revisit the group of to do lists and find a better representation:</p>
+                    <pre><code contenteditable class="fragment python">
+mary_to_dos = ['eat', 'work', 'pick up laundry', 'care for baby', 'sleep']
+fran_to_dos = ['eat', 'work', 'call plumber', 'sleep']
+baby_to_dos = ['eat', 'sleep']
+
+all_to_dos = {
+    'mary': mary_to_dos,
+    'fran': fran_to_dos,
+    'baby': baby_to_dos,
+}
+
+for name, to_dos in all_to_dos.items():
+    print '{0} needs to: {1}'.format(name, to_dos)
+
+all_to_dos['baby'].append('cry')
+                    </code></pre>
+                    <p class="fragment">Now the to do lists can be indexed or modified by name</p>
+                </section>
+
+                <section>
+                    <h3>Means of Combination</h3>
+                    <p>Lists, dictionaries, sets, tuples, and other collections are means of combination.</p>
+                    <p class="fragment">They can be freely combined to create the data structure needed for a particular problem</p>
+                    <p class="fragment">Eg. A list of dictionaries with lists</p>
+                    <pre><code contenteditable class="fragment python">
+all_tweets = [
+    {
+        'author': 'mary',
+        'handle': '@hadalittlelamb',
+        'date': '2013-01-22',
+        'tweets': [
+            'at Loco Pops enjoying a Raspberry Sage popsicle',
+            'Learning Python is so much fun',
+        ],
+    },
+]
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Builtins for collections</h3>
+                    <p>Python provides several functions that help us work with these collections.</p>
+                    <table class="fragment">
+                        <tr>
+                            <td>len()</td>
+                            <td>Given a collection, return its length</td>
+                        </tr>
+                        <tr>
+                            <td>range()</td>
+                            <td>Create a list of integers in the range provided.</td>
+                        </tr>
+                        <tr>
+                            <td>sorted()</td>
+                            <td>Given a collection, returns a sorted copy of that collection</td>
+                        </tr>
+                        <tr>
+                            <td>enumerate()</td>
+                            <td>Returns a list of (index, element) from the list</td>
+                        </tr>
+                        <tr>
+                            <td>zip()</td>
+                            <td>Given one or more iterables, returns a list of tuples with an element from each iterable</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h3>Examples of using Builtins</h3>
+                    <pre><code contenteditable class="fragment python">
+# Using len() - Determines length
+print len([1, 2])
+
+# range() - Quickly creates a list of integers
+print range(5)
+print range(5, 10)
+print range(0, 10, 2)
+print range(9, -1, -1)
+
+# sorted() - Sort a given list
+grades = [93, 100, 60]
+grades = sorted(grades)
+print grades
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Builtins Examples continued</h3>
+                    <pre><code contenteditable class="fragment python">
+# enumerate() - Obtain the index of the element in the loop
+
+print 'To Do:'
+to_dos = ['work', 'sleep', 'work']
+for index, item in enumerate(to_dos):
+    print '{0}. {1}'.format(index + 1, item)
+
+print list(enumerate(to_dos))
+
+# zip()
+widths = [10, 15, 20]
+heights = [5, 8, 12]
+for width, height in zip(widths, heights):
+    print 'Area is {0}'.format(width * height)
+                    </code></pre>
+                </section>
+
+                <section>
+                </section>
             </div>
             <footer>
                 <div class="copyright">
