@@ -4,6 +4,7 @@ This is the official Girl Develop It Intro to Python course. Material is loosely
 
 The course is meant to be taught in 4 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.
 
+N.B. - This repo should see a bit of change in the coming weeks and very much constitutes a WIP
 ## Classes
 
 ### Class 1
