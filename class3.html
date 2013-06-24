@@ -112,6 +112,22 @@ def print_hypotenuse(x1, y1, x2, y2):
                 </section>
 
                 <section>
+                    <h3>Scope</h3>
+                    <p>The <strong>scope</strong> of a variable is the area of code in which a variable is still valid and can be used.</p>
+                    <p class="fragment">Variables defined within a function can not be used elsewhere.</p>
+                    <pre><code contenteditable class="fragment python">
+def get_triangle_area(base, height):
+    rect_area = base * height
+    return rect_area / 2.0
+
+triangle_area = get_triangle_area(10, 20)
+
+print rect_area
+# NameError
+                    </code></pre>
+                </section>
+
+                <section>
                     <h3>Method Calls</h3>
                     <p>A <strong>method</strong> is like a function but it is "bound" to an object.</p>
                     <p class="fragment">For instance, the integers and strings we've been using all along have methods attached to them</p>
