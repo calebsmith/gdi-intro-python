@@ -1,7 +1,12 @@
 #!/usr/bin/python
 """
+Suitable after taking class 4
+
 Some text processing functions that help open a plain-text book and process
 its lines into a collection of discreet words therein.
+
+Plain text books without copyright can be obtained from Project Gutenberg:
+http://www.gutenberg.org/
 
 run 'python book.py' to see the list of words in a text file, that are not in
 the dictionary.

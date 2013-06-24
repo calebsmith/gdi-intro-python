@@ -1,6 +1,15 @@
 #!/usr/bin/python
 """
+Suitable for hacking after class 3.
+
 This file contains functions to help you open and process text files
+
+It also provides a function for obtaining the set of English words. This can be
+used to help with anything you might want to do with spell-checking or
+determing if a word is valid according to the dictionary.
+
+N.B. The dictionary isn't necessarily exhaustive and isn't meant to be
+authoritative, just a useful example to work with.
 
 """
 
