@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Intro to Python ~ Girl Develop It</title>
+
+        <meta name="description" content="This is the official Girl Develop It Core Intro to Python course. The course is meant to be taught in four two-hour sessions. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+        <meta name="author" content="Girl Develop It">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="reveal/css/reveal.css">
+        <link rel="stylesheet" href="reveal/css/theme/gdicool.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+        <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+
+        <!-- If use the PDF print sheet so students can print slides-->
+
+        <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+              <!-- Opening slide -->
+                <section>
+                    <img src="images/gdi_logo_badge.png">
+                    <h3>Intro to Python</h3>
+                    <h4>Class 3</h3>
+                </section>
+                <!-- Block 1 -->
+                <section>
+                    <h3>Review</h3>
+                    <ul>
+                        <li>Functions - calls, definitions, returns, arguments</li>
+                        <li>Conditions - if, elif, else</li>
+                        <li>Loops - while, for</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>What we will cover today</h3>
+                    <ul>
+                        <li class="fragment">More Functions</li>
+                        <li class="fragment">Method calls</li>
+                        <li class="fragment">Lists and dictionaries</li>
+                        <li class="fragment">Python builtin functions</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>More with Functions</h3>
+                    <p>Functions can also call other functions.</p>
+                    <p class="fragment">One can use this to break up tasks into small pieces that rely on others to do their work.</p>
+                    <pre><code contenteditable class="fragment python">
+from math import sqrt
+
+def absolute_difference(value_a, value_b):
+    return abs(value_a - value_b)
+
+def find_width_height(x1, y1, x2, y2):
+    width = absolute_difference(x1, x2)
+    height = absolute_difference(y1, y2)
+    return width, height
+
+def get_hypotenuse(a, b):
+    return sqrt(a ** 2 + b ** 2)
+
+def get_area_rectangle(width, height):
+    return width * height
+
+def print_area_and_hypotenuse(x1, y1, x2, y2):
+    width, height = find_width_height(x1, y1, x2, y2)
+    area = get_area_rectangle(width, height)
+    hypotenuse = get_hypotenuse(width, height)
+    print 'Area of the rectangle is:'
+    print area
+    print 'The diagonal of the rectangle is:'
+    print hypotenuse
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Function Composition</h3>
+                    <p><strong>Function composition</strong> is when the output of one function acts as the input of another</p>
+                    <pre><code contenteditable class="fragment python">
+from math import sqrt
+
+def find_width_height(x1, y1, x2, y2):
+    return abs(x1 - x2), abs(y1 - y2)
+
+def get_hypotenuse(a, b):
+    return sqrt(a ** 2 + b ** 2)
+
+def print_hypotenuse(x1, y1, x2, y2):
+    print 'The diagonal of the rectangle is:'
+    print get_hypotenuse(find_width_height(x1, y1, x2, y2))
+
+
+# f(g(x))
+# is the same as:
+#     y = g(x)
+#     f(y)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Scope</h3>
+                    <p>The <strong>scope</strong> of a variable is the area of code in which a variable is still valid and can be used.</p>
+                    <p class="fragment">Variables defined within a function can not be used elsewhere.</p>
+                    <pre><code contenteditable class="fragment python">
+def get_triangle_area(base, height):
+    rect_area = base * height
+    return rect_area / 2.0
+
+triangle_area = get_triangle_area(10, 20)
+
+print rect_area
+# NameError
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Method Calls</h3>
+                    <p>A <strong>method</strong> is like a function but it is "bound" to an object.</p>
+                    <p class="fragment">For instance, the integers and strings we've been using all along have methods attached to them</p>
+                    <p class="fragment">We can use the dir() function to see the methods of an object and help() to see what they do.</p>
+                    <pre><code contenteditable class="fragment python">
+a = 4
+print dir(a)
+
+name = 'caleb'
+sentence = 'the quick brown fox did the thing with the thing'
+print dir(name)
+
+print name.capitalize()
+print sentence.count('the')
+
+help(name.upper)
+                    </code></pre>
+                </section>
+
+                <!-- Block 2 -->
+                <section>
+                    <h3>Lists</h3>
+                    <p>A list is an ordered collection of elements</p>
+                    <p class="fragment">In Python, a list is defined using `[ ]` with elements separated by commas, as in the following example</p>
+                    <pre><code contenteditable class="fragment python">
+words = ['list', 'of', 'strings']
+                    </code></pre>
+                    <p class="fragment">A list can, but doesn't have to be of all one type. A list of one type is <strong>homogenous</strong> as opposed to a list of multiple types, which is <strong>heterogeneous</strong>.</p>
+                    <pre><code contenteditable class="fragment python">
+# heterogenous list
+words = [0, 'list', 'of', 3, 'strings', 'and', 'numbers']
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>List Methods</h3>
+                    <p>Lists have several methods, the most useful of which is `append`</p>
+                    <p class="fragment">A list can come into the world empty and have values added to it with `append`</p>
+                    <pre><code contenteditable class="fragment python">
+to_dos = []
+to_dos.append('buy soy milk')
+to_dos.append('install git')
+print to_dos
+                    </code></pre>
+                    <p class="fragment">Therefore, lists are <strong>mutable</strong></p>
+                    <p class="fragment">This means that a list can change values during the duration of a program</p>
+                </section>
+
+                <section>
+                    <h3>Iteration</h3>
+                    <p>Lists and many other collections are <strong>iterable</strong>.</p>
+                    <p class="fragment">Once defined, we can iterate on them, performing an action with each element</p>
+                    <pre><code contenteditable class="fragment python">
+shipping_cost = 2.5
+prices = [3, 4, 5.25]
+costs = []
+
+for price in prices:
+    costs.append(price + shipping_cost)
+
+for cost in costs:
+    print cost
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Indexing</h3>
+                    <p>An element can also be obtained from a list through <strong>indexing</strong></p>
+                    <p class="fragment">This allows us to obtain an element without iterating through the entire collection if we just want one value.</p>
+                    <p class="fragment">To index on a collection, follow it immediately with `[index]`. (index here is a number, variable or expression)</p>
+                    <pre><code contenteditable class="fragment python">
+numbers = [10, 20, 30]
+print numbers[0]
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Indexing continued</h3>
+
+                    <p class="fragment">Lists and other collections in Python are <strong>zero indexed</strong>. This means that the number 0 refers to first element in the list.</p>
+                    <pre><code contenteditable class="fragment python">
+to_dos = [
+    'install git', 'read email', 'make lunch',
+]
+print to_dos[0]
+print to_dos[1]
+
+print to_dos[-1]
+                    </code></pre>
+                    <p class="fragment">Negative numbers mean "go back from the end this many". e.g. -1 is the last element, -2 is the penultimate</p>
+                    <p class="fragment">An IndexError results if an exceeds the length of the list - 1</p>
+                </section>
+
+                <section>
+                    <h3>Dictionaries</h3>
+                    <p>A <strong>dictionary</strong> (sometimes called a "hashmap") is a collection of key/value pairs, defined with '{}'</p>
+                    <pre><code contenteditable class="fragment python">
+menu_categories = {
+    'food': 'stuff you eat',
+    'beverage': 'stuff you drink',
+}
+                    </code></pre>
+                    <p class="fragment">Think of words in a dictionary. The words are keys and the definitions are values.</p>
+                    <p class="fragment">This dictionary would be indexed with strings such as 'food' and 'beverage' instead of integers like in a list</p>
+                    <p class="fragment"></p>
+                </section>
+
+                <section>
+                    <h3>Indexing on Dictionaries</h3>
+                    <p>Dictionaries aren't literally just for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.</p>
+                    <p class="fragment">We can also index on dictionaries.</p>
+                    <p class="fragment">The most common indexes are strings, but they can be whatever type the keys are.</p>
+                    <pre><code contenteditable class="fragment python">
+menu = {
+    'tofu': 4,
+}
+
+tofu_cost = menu['tofu']
+                    </code></pre>
+                    <p class="fragment">Indexing on a key that doesn't exist results in a KeyError</p>
+                    <p class="fragment">If you aren't certain a key is present, you can use the 'get' method</p>
+                </section>
+
+                <section>
+                    <h3>Dictionary Methods</h3>
+                    <p>Some of the most essential methods are 'keys', 'values' and 'items'</p>
+                    <pre><code contenteditable class="fragment python">
+menu = {
+    'tofu': 4,
+    'pizza': 8,
+    'baguette': 3,
+}
+
+print menu.keys()
+print menu.values()
+print menu.items()
+print menu.get('pizza')
+print menu.get('water')
+print menu.get('juice', 5)
+                    </code></pre>
+                    <p class="fragment">'get' will return None if the key isn't present or a default value if provided.</p>
+                </section>
+
+                <section>
+                    <h3>Tuples</h3>
+                    <p><strong>Tuples</strong> are like lists, but they are <strong>immutable</strong>. They are particularly good at storing collections of a fixed and predictable size. Use '()' to define tuples</p>
+                    <p class="fragment">An x, y coordinate pair, or the RGB values of a color are good candidates for tuples.</p>
+                    <pre><code contenteditable class="fragment python">
+point = (0, 1)
+x = point_a[0]
+y = point_a[1]
+
+# or, even better
+
+point = (0, 1)
+x, y = point_a
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Tuple Example</h3>
+                    <p>Remember the geometry functions earlier? Some of these can be simplified using tuples</p>
+                    <pre><code contenteditable class="fragment python">
+def find_width_height(point_a, point_b):
+    x_a, y_a = point_a
+    x_b, y_b = point_b
+    return abs(x_a - x_b), abs(y_a - y_b)
+
+point_a = (5, 0)
+point_b = (10, 4)
+dimensions = find_width_height(point_a, point_b)
+                    </code></pre>
+                    <p class="fragment">N.B. - In the example, the function returns a tuple. In some contexts the parenthesis around a tuple are not strictly required</p>
+                </section>
+
+                </section>
+
+                <section>
+                    <h3>Sets</h3>
+                    <p><strong>Sets</strong> are unordered collections whose elements are unique. Therefore, adding a value to a set that already has it, does nothing.</p>
+                    <p class="fragment">Sets can be created with comma separated elements enclosed in '{}' in Python 2.7. Usually, just make a list and use the set() function</p>
+                    <pre><code contenteditable class="fragment python">
+set_a = set([0, 3, 7])
+set_b = set([0, 4, 7])
+
+print set_a.add(4)
+
+# or in 2.7
+set_a = {0, 3, 7} # and so on
+                    </code></pre>
+                    <p class="fragment">Sets have nice methods for reasoning about their relationship to other sets. (Think Venn Diagram)</p>
+                </section>
+
+                <section>
+                    <h3>The in operator</h3>
+                    <p>The `in` operator is used to determine if an element is in a given collection</p>
+                    <p class="fragment">For dictionaries, the keys are searched for the element.</p>
+                    <pre><code contenteditable class="fragment python">
+color = (255, 255, 0)
+menu = {'tofu': 4}
+names = ['Mary', 'Martha', 'George']
+
+print 'tofu' in menu
+george_present = 'George' in names
+if 0 in color:
+    print '0 is in the color'
+                    </code></pre>
+                </section>
+
+                <!-- Block 3 -->
+                <section>
+                    <h3>Lists of ... Lists</h3>
+                    <p>Lists can contain not only numbers or strings, but also other lists.</p>
+                    <p class="fragment">Such a structure is said to be  <strong>nested</strong></p>
+                    <p class="fragment">The following is a list of lists that is defined literally:</p>
+                    <pre><code contenteditable class="fragment python">
+game_board = [
+    ['O', 'X', ' '],
+    [' ', 'X', ' '],
+    [' ', ' ', ' '],
+]
+                    </code></pre>
+                    <p class="fragment">This can be indexed successively with <code>game_board[0][1]</code></p>
+                </section>
+                <section>
+                    <h3>Nested Lists continued</h3>
+                    <p>A list can be appended to a list as well</p>
+                    <pre><code contenteditable class="fragment python">
+mary_to_dos = ['eat', 'work', 'pick up laundry', 'care for baby', 'sleep']
+fran_to_dos = ['eat', 'work', 'call plumber', 'sleep']
+baby_to_dos = ['eat', 'sleep']
+
+all_to_dos = []
+all_to_dos.append(mary_to_dos)
+all_to_dos.append(fran_to_dos)
+all_to_dos.append(baby_to_dos)
+
+print all_to_dos
+
+for to_dos in all_to_dos:
+    for to_do in to_dos:
+        print to_do
+                    </code></pre>
+                    <p class="fragment">What if we want to <strong>flatten</strong> the to do's?</p>
+                    <p class="fragment">What if we want the to do's to be unique?</p>
+                </section>
+
+                <section>
+                    <h3>Lists of Dictionaries</h3>
+                    <p>One of the most common and useful nested data structures, is a list of dictionaries</p>
+                    <pre><code contenteditable class="fragment python">
+card_a = {
+    'suit': 'spades',
+    'number': 4,
+}
+
+card_b = {
+    'suit': 'hearts',
+    'number': 8,
+}
+
+hand = [card_a, card_b]
+
+print 'The hand contains:'
+for card in hand:
+    print 'A {0} of {1}'.format(card['number'], card['suit'])
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Dictionary of Lists</h3>
+                    <p>A dictionary can also contain values that are themselves other collections, such as lists.</p>
+                    <p class="fragment">Let's revisit the group of to do lists and find a better representation:</p>
+                    <pre><code contenteditable class="fragment python">
+mary_to_dos = ['eat', 'work', 'pick up laundry', 'care for baby', 'sleep']
+fran_to_dos = ['eat', 'work', 'call plumber', 'sleep']
+baby_to_dos = ['eat', 'sleep']
+
+all_to_dos = {
+    'mary': mary_to_dos,
+    'fran': fran_to_dos,
+    'baby': baby_to_dos,
+}
+
+for name, to_dos in all_to_dos.items():
+    print '{0} needs to: {1}'.format(name, to_dos)
+
+all_to_dos['baby'].append('cry')
+                    </code></pre>
+                    <p class="fragment">Now the to do lists can be indexed or modified by name</p>
+                </section>
+
+                <section>
+                    <h3>Means of Combination</h3>
+                    <p>Lists, dictionaries, sets, tuples, and other collections are means of combination.</p>
+                    <p class="fragment">They can be freely combined to create the data structure needed for a particular problem</p>
+                    <p class="fragment">Eg. A list of dictionaries with lists</p>
+                    <pre><code contenteditable class="fragment python">
+all_tweets = [
+    {
+        'author': 'mary',
+        'handle': '@hadalittlelamb',
+        'date': '2013-01-22',
+        'tweets': [
+            'at Loco Pops enjoying a Raspberry Sage popsicle',
+            'Learning Python is so much fun',
+        ],
+    },
+]
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Builtins for collections</h3>
+                    <p>Python provides several functions that help us work with these collections.</p>
+                    <table class="fragment">
+                        <tr>
+                            <td>len()</td>
+                            <td>Given a collection, return its length</td>
+                        </tr>
+                        <tr>
+                            <td>range()</td>
+                            <td>Create a list of integers in the range provided.</td>
+                        </tr>
+                        <tr>
+                            <td>sorted()</td>
+                            <td>Given a collection, returns a sorted copy of that collection</td>
+                        </tr>
+                        <tr>
+                            <td>enumerate()</td>
+                            <td>Returns a list of (index, element) from the list</td>
+                        </tr>
+                        <tr>
+                            <td>zip()</td>
+                            <td>Given one or more iterables, returns a list of tuples with an element from each iterable</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h3>Examples of using Builtins</h3>
+                    <pre><code contenteditable class="fragment python">
+# Using len() - Determines length
+print len([1, 2])
+
+# range() - Quickly creates a list of integers
+print range(5)
+print range(5, 10)
+print range(0, 10, 2)
+print range(9, -1, -1)
+
+# sorted() - Sort a given list
+grades = [93, 100, 60]
+grades = sorted(grades)
+print grades
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Builtins Examples continued</h3>
+                    <pre><code contenteditable class="fragment python">
+# enumerate() - Obtain the index of the element in the loop
+
+print 'To Do:'
+to_dos = ['work', 'sleep', 'work']
+for index, item in enumerate(to_dos):
+    print '{0}. {1}'.format(index + 1, item)
+
+print list(enumerate(to_dos))
+
+# zip()
+widths = [10, 15, 20]
+heights = [5, 8, 12]
+for width, height in zip(widths, heights):
+    print 'Area is {0}'.format(width * height)
+                    </code></pre>
+                </section>
+
+                <section>
+                </section>
+            </div>
+            <footer>
+                <div class="copyright">
+                    Intro to Python ~ Girl Develop It ~
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+    </body>
+</html>
+

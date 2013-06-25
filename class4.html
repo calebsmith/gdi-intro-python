@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Intro to Python ~ Girl Develop It</title>
+
+        <meta name="description" content="This is the official Girl Develop It Core Intro to Python course. The course is meant to be taught in four two-hour sessions. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+        <meta name="author" content="Girl Develop It">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="reveal/css/reveal.css">
+        <link rel="stylesheet" href="reveal/css/theme/gdicool.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+        <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+
+        <!-- If use the PDF print sheet so students can print slides-->
+        
+        <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+              <!-- Opening slide -->
+                <section>
+                    <img src = "images/gdi_logo_badge.png">
+                    <h3>Intro to Python</h3>
+                    <h4>Class 4</h4>
+                </section>
+
+                <section>
+                    <h3>Review</h3>
+                    <ul>
+                        <li>Method calls</li>
+                        <li>Combining lists and dictionaries</li>
+                        <li>Builtins for collections</li>
+                    </ul>
+                </section>
+
+                <!-- Block 1 -->
+                <section>
+                    <h3>Functions on Dictionaries</h3>
+                    <p></p>
+                    <pre><code contenteditable class="fragment python">
+character = {
+    'x': 10,
+    'y': 20,
+    'health': 100,
+}
+
+def injure(character, damage):
+    current_health = character['health']
+    if current_health > damage:
+        character['health'] = current_health - damage
+    else:
+        character['health'] = 0
+
+def heal(character, amount):
+    current_health = character['health']
+    if current_health < 100:
+        character['health'] = current_health + amount
+    else:
+        character['health'] = 100
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Class Attributes</h3>
+                    <p>A <strong>class</strong> creates a new type of object.</p>
+                    <p class="fragment">A class defines the attributes and methods of objects of that type</p>
+                    <pre><code contenteditable class="fragment python">
+class Character():
+
+    def __init__(self, x, y, health=100):
+        self.x = x
+        self.y = y
+        self.health = health
+
+character = Character(10, 20)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>A Sense of Self</h3>
+                    <p>The first argument to every method is <strong>self</strong>.</p>
+                    <p class="fragment">self contains the attributes and methods for the current object</p>
+                    <p class="fragment">Assigning values to an attribute on self is how we <strong>mutate</strong> the object's state.</p>
+                    <pre><code contenteditable class="fragment python">
+class Character():
+
+    def __init__(self, x, y, health=100):
+        self.x = x
+        self.y = y
+        self.health = health
+
+    def move_up(self):
+        self.y -= 1
+
+character = Character(10, 20)
+character.move_up()
+                    </code></pre>
+                </section>
+
+                <!-- Block 2 -->
+                <section>
+                    <h3>Class Methods</h3>
+                    <p>A class also defines <strong>methods</strong>, which are functions that operate solely on objects of that type</p>
+                    <pre><code contenteditable class="fragment python">
+# inside the character class
+
+    def heal(self, amount):
+        if self.health + amount < 100:
+            self.health += amount
+        else:
+            self.health = 100
+
+    def injure(self, amount):
+        if self.health - amount > 0:
+            self.health -= amount
+        else:
+            self.health = 0
+
+character = Character(10, 20)
+character.injure(10)
+                    </code></pre>
+                </section>
+
+                <!-- Block 3 -->
+                <section>
+                    <h3>List Comprehensions</h3>
+                    <p>I have a list and I have something I want to do to each element to create a new list</p>
+                    <pre><code contenteditable class="fragment python">
+squares = []
+for number in range(11):
+    squares.append(number ** 2)
+                    </code></pre>
+                    <p class="fragment">This pattern is so common, there is a shorter way to express it:</p>
+                    <pre><code contenteditable class="fragment python">
+squares = [number ** 2 for number in range(11)]
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>List Comprehensions continued</h3>
+                    <pre><code contenteditable class="fragment python">
+superheroes = [
+    'wonder woman',
+    'batman',
+    'storm',
+    'a-bomb',
+    'rogue',
+]
+
+superheroes = [superhero.title() for superhero in superheroes]
+                    </code></pre>
+                </section>
+
+                <section>
+                </section>
+            </div>
+            <footer>
+                <div class="copyright">
+                    Intro to Python ~ Girl Develop It ~
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/themes
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+    </body>
+</html>
+

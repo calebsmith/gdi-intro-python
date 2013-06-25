@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Intro to Python ~ Girl Develop It</title>
+
+        <meta name="description" content="This is the official Girl Develop It Core Intro to Python course. The course is meant to be taught in four two-hour sessions. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+        <meta name="author" content="Girl Develop It">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="reveal/css/reveal.css">
+        <link rel="stylesheet" href="reveal/css/theme/gdicool.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+        <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+
+        <!-- If use the PDF print sheet so students can print slides-->
+        
+        <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+              <!-- Opening slide -->
+                <section>
+                    <img src = "images/gdi_logo_badge.png">
+                    <h3>Intro to Python</h3>
+                    <h4>Class 2</h4>
+                </section>
+                <!-- Block 1 -->
+                <section>
+                    <h3>Review</h3>
+                    <ul>
+                        <li>Arithmetic and variables</li>
+                        <li>Data types</li>
+                        <li>Text editor, command line, and python shell</li>
+                    </ul> 
+                </section>
+                <section>
+                    <h3>What we will cover today</h3>
+                    <ul>
+                        <li class ="fragment">Functions</li>
+                        <li class ="fragment">Conditionals</li>
+                        <li class ="fragment">Loops</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Functions</h3>
+                    <p>Also known as "procedures"</p>
+                    <p> - A named unit of code that performs a specific task</p>
+                    <p class="fragment">When one uses a function, one makes a function <strong>call</strong></p>
+                    <p class="fragment">We have already made a function call when using the type function</p>
+
+                    <pre><code contenteditable class="fragment python">
+a = 3
+print type(a)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Function calls</h3>
+                    <pre><code contenteditable class="fragment python">
+a = 3
+print type(a)
+                    </code></pre>
+                    <p class="fragment">A function can take <strong>arguments</strong></p>
+                    <p class="fragment">In the example above, the variable `a` is passed as an argument to the function `type`</p>
+                    <p class="fragment">An argument can be a variable, a literal or any expression. Can also be called <strong>parameters</strong></p>
+                    <pre><code contenteditable class="fragment python">
+int('32')
+str(32)
+
+a = 32
+str(a)
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Function definition</h3>
+                    <p>The following example is a <strong>function definition</strong>. This allows us to create our own functions</p>
+                    <pre><code contenteditable class="fragment python">
+def plus_5(x):
+    print x + 5
+                    </code></pre>
+                    <p class="fragment">The function definition has the following parts</p>
+                    <ul>
+                        <li class="fragment">The <strong>def</strong> keyword signifying that we are defining a function</li>
+                        <li class="fragment">The name of the function being defined - This function is called `plus_5`</li>
+                        <li class="fragment">The argument or list of arguments in parentheses - This function takes the argument `x`</li>
+                        <li class="fragment">The function <strong>body</strong>, which is a block of indented code of one or more lines that is executed when the function is called. - This function has `print x + 5` as its function body</li>
+                    </ul>
+                </section>
+                <!-- Break: Write a function that takes a value, does simple math and prints the answer -->
+
+                <!-- Block 2 -->
+                <section>
+                    <h3>Function returns</h3>
+                    <p>A function can also <strong>return</strong> a value</p>
+                    <p class="fragment">To do this, one uses the <strong>return</strong> keyword</p>
+    
+                    <pre><code contenteditable class="fragment python">
+def plus_5(x):
+    return x + 5
+
+y = plus_5(4)
+print y
+                    </code></pre>
+                    <p class="fragment">This allows us to call a function to obtain a value for later use.</p>
+                    <p class="fragment">In this example, y is set to the value 9</p>
+                    <p class="fragment">To determine what a function will return, we can use a mental model called the <strong>substitution method</strong>.</p>
+                    <p class="fragment">A function that does not use return, returns `None`. (In Python, this represents something without a value)</p>
+                </section>
+
+                <section>
+                    <h3>Functions with no arguments or several</h3>
+                    <p>A function does not have to take arguments, as in the following example:
+                    <pre><code contenteditable class="fragment python">
+def newline():
+    print ''
+                    </code></pre>
+                    <p class="fragment">This is useful when the function does some work but doesn't need any parameters. i.e. The function is intended to always do the same thing</p>
+                    <p class="fragment">A function can also take more than one argument separated by commas. For example:</p>
+                    <pre><code contenteditable class="fragment python">
+def find_rectangle_area(width, height):
+    return width * height
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Import statements</h3>
+                    <p>The <strong>import</strong> statement allows us to use Python code that is defined in one file in other place.</p>
+                    <p class="fragment">The <strong>from</strong> keyword allows us to only import parts of a Python file</p>
+                    <pre><code contenteditable class="fragment python">
+# In knights.py
+def shrubbery():
+    print "I am a shrubber"
+
+def ni():
+    print "Ni!" * 3
+
+# In a Python shell, ran from the same directory
+import knights
+knights.shrubbery()
+knights.ni()
+
+# or
+from knights import shrubbery
+shrubbery()
+                    </code></pre>
+                </section>
+
+                <!-- Block 3 -->
+                <section>
+                    <h3>Conditionals</h3>
+                    <p>When we want different code to execute dependending on certain criteria, we use a <strong>conditional</strong></p>
+                    <p class="fragment">We achieve this using <strong>if</strong> statements</p>
+                    <pre><code contenteditable class="fragment python">
+if x == 5:
+    print 'x is equal to 5'
+                    </code></pre>
+                    <p class="fragment">We often want a different block to execute if the statement is false. This can be accomplished using <strong>else</strong></p>
+                    <pre><code contenteditable class="fragment python">
+if x == 5:
+    print 'x is equal to 5'
+else:
+    print 'x is not equal to 5'
+                    </code></pre>
+                </section>
+                <section>
+                    <h3>Predicates</h3>
+                    <p>The expression after `if` and before the colon is a Boolean expression, also called a <strong>predicate</strong></p>
+                    <p class="fragment">A variable can be used to store the evaluation of a predicate, especially if it is particularly long or complicated</p>
+                    <p class="fragment">Predicates can be combined or prefaced with <strong>Logical operators</strong>: `not`, `and` and `or`</p>
+                    <p class="fragment">Predicates and the logical operators that act on them can be wrapped in parenthesis to enforce prescendence</p>
+                    <pre><code contenteditable class="fragment python">
+if x != 0 or y != 0:
+    print 'The point x,y is not on the x or y axis'
+
+if x > 0 and y > 0:
+    print 'x and y are both positive'
+
+c = (x == 5 and y == 3) or (x == 3 and y == 5)
+d = (x == 2 and y == 1) or (x == 1 and y == 2)
+if c and not d:
+    do_something()
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Chained conditionals</h3>
+                    <p class="fragment">Conditionals can also be <strong>chained</strong></p>
+                    <p class="fragment">Chained conditionals use <strong>elif</strong> as an additonal check after the preceeding `if` predicate was False. For example</p>
+                    <pre><code contenteditable class="fragment python">
+if x > 5:
+    print 'x is greater than 5'
+elif x < 5:
+    print 'x is less than 5'
+else:
+    print 'x is equal to 5'
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Nested conditionals</h3>
+                    <p class="fragment">Conditionals can also be <strong>nested</strong></p>
+                    <p class="fragment">Nested conditionals occur inside of other conditionals and are indented over once more. When the code block is complete, they are unindented</p>
+                    <pre><code contenteditable class="fragment python">
+if x > 5:
+    print 'x is greater than 5'
+    if x > 10:
+        print '...it is also greater than 10'
+    print 'Done evaluating the x > 10 block'
+print 'Done evaluating the x > 5 block'
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Iteration</h3>
+                    <p>It is often useful to perform a task and to repeat the process until a certain point is reached.</p>
+                    <p class="fragment">The repeated execution of a set of statements is called <strong>iteration</strong></p>
+                    <p class="fragment">One way to acheive this, is with the <strong>while</strong> statement.</p>
+                    <pre><code contenteditable class="fragment python">
+x = 10
+while x > 0:
+    print x
+    x = x - 1
+print 'Done'
+                    </code></pre>
+                <p class="fragment">The while statement takes a predicate, and as long as it evaluates to True, the code block beneath it is repeated.</p>
+                <p class="fragment">This creates a <strong>loop</strong>. Without the `x = x - 1` statement, this would be an <strong>infinite loop</strong></p>
+                </section>
+
+                <section>
+                    <h3>While loops</h3>
+                    <p>Consider the following example that uses iteration to derive a factorial</p>
+                    <pre><code contenteditable class="fragment python">
+def factorial(n):
+    result = 1
+    while n > 1:
+        result = result * n
+        n = n - 1
+    return result
+
+factorial(3)
+                    </code></pre>
+                    <p class="fragment">N.B. - This implementation does not work for negative numbers</p>
+                </section>
+
+                <section>
+                    <h3>For loops</h3>
+                    <p>It is also useful to loop through a collection of elements, visiting each one to do some work, then stopping once all elements are processed.</p>
+                    <p class="fragment">This is often accomplished with a <strong>for</strong> statement</p>
+                    <pre><code contenteditable class="fragment python">
+numbers = [1, 3, 8]
+for number in numbers:
+    print number
+                    </code></pre>
+                    <p class="fragment">We create a <strong>list</strong> of numbers to loop over. This is called `numbers`</p>
+                    <p class="fragment">The for loop has three parts:</p>
+                    <ul>
+                        <li class="fragment">The collection to loop over - numbers</li>
+                        <li class="fragment">The name to give each element once reached - number</li>
+                        <li class="fragment">The block of statements to execute with the element</li>
+                    </ul>
+                </section>
+
+                <section>
+                </section>
+            </div>
+            <footer>
+                <div class="copyright">
+                    Intro to Python ~ Girl Develop It ~
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+
+                theme: Reveal.getQueryHash().theme, // available theme are in /css/themes
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+    </body>
+</html>
+
