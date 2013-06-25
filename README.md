@@ -35,3 +35,28 @@ What is Object-Oriented Programming and Functional Programming and how can they 
 
 We'll also get started on some projects that you can do with your new Python skills.
 
+## Using this repository locally
+
+Make sure you have git installed on your computer, and open a terminal window.
+
+You'll need to clone this repository to your computer::
+
+    git clone https://github.com/calebsmith/gdi-intro-python.git
+
+reveal.js is stored as a git submodule. To set up the reveal.js code::
+
+    cd gdi-intro-python
+    git submodule init
+    git submodule update
+
+(Note: Some internet connections (including our class location) block SSH
+connections on Port 22. If you get an error running the above, edit
+``gdi-into-python/.git/modules/reveal/config`` and change the line
+``url = git://git@github.com/girldevelopit/reveal.js.git`` to
+``url = https://github.com/girldevelopit/reveal.js.git`` and run the above
+commands again.)
+
+To get the code running, run ``python server.py`` from the gdi-intro-python
+directory.
+
+Finally, navigate to ``http://localhost:8000/`` in your browser.
