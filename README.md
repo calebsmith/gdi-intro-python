@@ -1,4 +1,7 @@
 # Intro to Python
+
+The slides for this course can be viewed [here](http://calebsmith.github.io/gdi-intro-python/#/)
+
  [![Gittip](http://badgr.co/gittip/calebsmith.png)](https://www.gittip.com/calebsmith/)
  
 This is the Girl Develop It Intro to Python course. Material is loosely based on Think Python by Allen B. Downey and written by Caleb Smith
