@@ -39,11 +39,11 @@ We'll also get started on some projects that you can do with your new Python ski
 
 Make sure you have git installed on your computer, and open a terminal window.
 
-You'll need to clone this repository to your computer::
+You'll need to clone this repository to your computer:
 
     git clone https://github.com/calebsmith/gdi-intro-python.git
 
-reveal.js is stored as a git submodule. To set up the reveal.js code::
+reveal.js is stored as a git submodule. To set up the reveal.js code:
 
     cd gdi-intro-python
     git submodule init
