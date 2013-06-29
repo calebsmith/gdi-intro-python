@@ -47,13 +47,72 @@
                         <li>Text editor, command line, and python shell</li>
                     </ul> 
                 </section>
+
                 <section>
                     <h3>What we will cover today</h3>
                     <ul>
-                        <li class ="fragment">Functions</li>
                         <li class ="fragment">Conditionals</li>
                         <li class ="fragment">Loops</li>
+                        <li class ="fragment">Functions</li>
                     </ul>
+                </section>
+
+                <section>
+                    <h3>Boolean Expressions</h3>
+                    <p>We can tell the computer to compare values and return True or False. These are called <strong>Boolean expressions</strong></p>
+                    <ul>
+                        <li class="fragment">Test for equality by using `==`. We can't use `=` because that is used for assignment</li>
+                        <li class="fragment">Test for greater than and less than using `&gt;` and `&lt;`</li>
+                    </ul>
+                    <pre class="fragment"><code contenteditable class="python">
+a = 5
+b = 5
+print a == b
+# Combine comparison and assignment
+c = a == b
+print c
+
+print 3 &lt; 5
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Boolean Expressions continued</h3>
+                    <p>The following chart shows the various Boolean operators</p>
+                    <table>
+                        <tr>
+                            <td>a == b</td>
+                            <td>a is equal to b</td>
+                        </tr>
+                        <tr>
+                            <td>a != b</td>
+                            <td>a does not equal b</td>
+                        </tr>
+                        <tr>
+                            <td>a &lt; b</td>
+                            <td>a is less than b</td>
+                        </tr>
+                        <tr>
+                            <td>a &gt; b</td>
+                            <td>a is greater than b</td>
+                        </tr>
+                        <tr>
+                            <td>a &lt;= b</td>
+                            <td>a is less than or equal to b</td>
+                        </tr>
+                        <tr>
+                            <td>a &gt;= b</td>
+                            <td>a is greater than or equal to b</td>
+                        </tr>
+                    </table>
+                    <pre class="fragment"><code contenteditable class="python">
+a = 3
+b = 4
+print a != b
+print a <= 3
+print a >= 4
+                    </code></pre>
+                    <p class="fragment">Remember: Equals does not equal "equals equals"</p>
                 </section>
                 <section>
                     <h3>Functions</h3>

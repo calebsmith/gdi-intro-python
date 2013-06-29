@@ -61,10 +61,11 @@
                     <li class ="fragment">What is programming?</li>
                     <li class ="fragment">Variables and arithmetic</li>
                     <li class ="fragment">Statements and Error Messages</li>
+                    <li class ="fragment">Development Environment Setup</li>
                   </ul>
                 </section>
 
-                <!-- Block 1-->
+                <!-- Block 1: 25 minutes -->
                 <section>
                   <h3>Why Python?</h3>
                   <ul>
@@ -119,7 +120,7 @@
                         </tr>
                         <tr>
                             <td><strong>Python Shell</strong></td>
-                            <td>A command line program that takes Python code as input, runs it, and prints out any results.</td>
+                            <td>A command line program that runs inside of the terminal, takes Python code as input, interprets it, and prints out any results.</td>
                         </tr>
                         <tr>
                             <td><strong>Text Editor</strong></td>
@@ -128,29 +129,63 @@
                     </table>
                 </section>
 
-                    <section>
-                        <h3>Example Text Editors</h3>
-                        <table>
-                            <tr>
-                                <td><strong>Linux</strong></td>
-                                <td>Gedit, Jedit, Kate</td>
-                            </tr>
-                            <tr>
-                                <td><strong>MacOSX</strong></td>
-                                <td>TextMate, TextWrangler</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Windows</strong></td>
-                                <td>Notepad++</td>
-                            </tr>
-                            <tr>
-                                <td><strong>All</strong></td>
-                                <td>Sublime Text, Vim, Emacs</td>
-                            </tr>
-                        </table>
-                    </section>
+                <section>
+                    <h3>Example Text Editors</h3>
+                    <table>
+                        <tr>
+                            <td><strong>Linux</strong></td>
+                            <td>Gedit, Jedit, Kate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MacOSX</strong></td>
+                            <td>TextMate, TextWrangler</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Windows</strong></td>
+                            <td>Notepad++</td>
+                        </tr>
+                        <tr>
+                            <td><strong>All</strong></td>
+                            <td>Sublime Text, Vim, Emacs</td>
+                        </tr>
+                    </table>
+                </section>
 
-                <!-- Block 2 -->
+                <!-- Let's develop it: 10 minutes-->
+                <section>
+                    <h3>Let's Develop It</h3>
+                    <p>Let's setup our computer for Python programming</p>
+                    <ul>
+                        <li>
+                            Let's install a text editor -
+                            <a href="http://www.sublimetext.com/2">Install Sublime Text 2</a>
+                        </li>
+                        <li>
+                            <a href="http://www.python.org/download/">Install Python</a>
+                            (This step is for Windows users only. GNU/Linux and MacOSX come with Python installed)
+                        </li>
+                        <li>
+                            After installing Python, open the "powershell" program and type:
+                            <pre>[Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python27", "User")</pre>
+                        </li>
+                        <li>
+                            Locate and run the terminal program. Type 'python' and hit enter.
+                        </li>
+                        <li>
+                            More setup instructions are available:
+                            <a href="http://learnpythonthehardway.org/book/ex0.html">here</a>
+                            (You can, but don't have to install the other text editors recommended in this guide)
+                        </li>
+                    </ul>
+                </section>
+                <!-- Block 2: 30 minutes -->
+                <section>
+                    <h3>Working in the Python Shell</h3>
+                    <p>Open up your terminal and type 'python'</p>
+                    <p class="fragment">Follow along with the examples in the slides. Type them in!</p>
+                    <p class="fragment">Feel free to explore as well. You will not accidentally break things</p>
+                </section>
+
                 <section>
                     <h3>Variables and Arithmetic</h3>
                     <pre><code contenteditable class="python">
@@ -198,6 +233,7 @@ print c
                     <h3>Data types</h3>
                     <ul>
                         <li>Variables are names of objects</li>
+                        <li>Among other things, variables are used to represent something that can't be known until the program is run</li>
                         <li>Objects always have a "type"</li>
                         <li>The type of an object helps define what it can do</li>
                         <li>The type can be found using: `type()`</li>
@@ -232,21 +268,19 @@ print a / 6
                     </code></pre>
                     </section>
 
-
-                <!-- Block 3 -->
-                <section>
-                    <h3>Errors</h3>
-                    <ul>
-                        <li class="fragment">There are different kinds of errors that can occur. We've seen a few of these so far</li>
-                        <li class="fragment">A runtime error results in an <strong>Exception</strong> of which there are several types. Each type gives us some information about the nature of the error and how to correct it</li>
-                        <li class="fragment">One type of exception is a <strong>SyntaxError</strong>. This results when our code can not be evaluated because it is incorrect at a syntactic level. In other words, we are not following the "rules" of the language.</li>
-                        <li class="fragment">Some other examples are the <strong>TypeError</strong> and <strong>NameError</strong> exceptions.</li>
-                    </ul>
-                </section>
+                    <section>
+                        <h3>Errors</h3>
+                        <ul>
+                            <li class="fragment">There are different kinds of errors that can occur. We've seen a few of these so far</li>
+                            <li class="fragment">A runtime error results in an <strong>Exception</strong> of which there are several types. Each type gives us some information about the nature of the error and how to correct it</li>
+                            <li class="fragment">One type of exception is a <strong>SyntaxError</strong>. This results when our code can not be evaluated because it is incorrect at a syntactic level. In other words, we are not following the "rules" of the language.</li>
+                            <li class="fragment">Some other examples are the <strong>TypeError</strong> and <strong>NameError</strong> exceptions.</li>
+                        </ul>
+                    </section>
 
                     <section>
-                        <h3>Errors - continued ...</h3>
-                        <pre><code contenteditable class="python">
+                    <h3>Errors - continued ...</h3>
+                    <pre><code contenteditable class="python">
 # SyntaxError - Doesn't conform to the rules of Python. This statement isn't meaningful to the computer
 4spam)eggs(garbage) + 10
 
@@ -257,74 +291,105 @@ b = 10
 
 # TypeError - Using an object in a way that its type does not support
 'string1' - 'string2'
-                        </code></pre>
-                        <p class="fragment">There are also <strong>semantic</strong> errors. These are harder to catch because the computer can't catch them for us.</p>
-                    </section>
-
-                <section>
-                    <h3>Statements</h3>
-                    <ul>
-                        <li class="fragment">print statements - `print 'hello'`</li>
-                        <li class="fragment">assignment statements - `a = 3`</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Boolean Expressions</h3>
-                    <p>We can tell the computer to compare values and return True or False. These are called <strong>Boolean expressions</strong></p>
-                    <ul>
-                        <li class="fragment">Test for equality by using `==`. We can't use `=` because that is used for assignment</li>
-                        <li class="fragment">Test for greater than and less than using `&gt;` and `&lt;`</li>
-                    </ul>
-                    <pre class="fragment"><code contenteditable class="python">
-a = 5
-b = 5
-print a == b
-# Combine comparison and assignment
-c = a == b
-print c
-
-print 3 &lt; 5
                     </code></pre>
+                    <p class="fragment">There are also <strong>semantic</strong> errors. These are harder to catch because the computer can't catch them for us.</p>
                 </section>
 
+                <!-- Let's develop it: 10 minutes -->
                 <section>
-                    <h3>Boolean Expressions continued</h3>
-                    <p>The following chart shows the various Boolean operators</p>
+                    <h3>Let's Develop It</h3>
+                    <p>We'll practice what we've learned in the shell</p>
+                    <p>Review the slides on your computer and practice entering any commands you didn't fully understand before</p>
+                    <p>Ask the teacher or a TA for any help</p>
+                </section>
+
+                <!-- Block 3 30 minutes -->
+
+                <section>
+                    <h3>Using the Terminal</h3>
+                    <p>Try each of the following commands in turn:</p>
                     <table>
                         <tr>
-                            <td>a == b</td>
-                            <td>a is equal to b</td>
+                            <th><strong>Command</strong></th>
+                            <th><strong>Short for</strong></th>
+                            <th><strong>Description</strong></th>
                         </tr>
                         <tr>
-                            <td>a != b</td>
-                            <td>a does not equal b</td>
+                            <td>pwd</td>
+                            <td>Print working directory</td>
+                            <td>Displays what folder you are in.</td>
                         </tr>
                         <tr>
-                            <td>a &lt; b</td>
-                            <td>a is less than b</td>
+                            <td>ls</td>
+                            <td>List</td>
+                            <td>Lists the files and folders in the current folder</td>
                         </tr>
                         <tr>
-                            <td>a &gt; b</td>
-                            <td>a is greater than b</td>
+                            <td>cd</td>
+                            <td>Change directory</td>
+                            <td>Change to another folder. Takes the folder name as an argument. 'cd ..' goes up a directory</td>
                         </tr>
                         <tr>
-                            <td>a &lt;= b</td>
-                            <td>a is less than or equal to b</td>
-                        </tr>
-                        <tr>
-                            <td>a &gt;= b</td>
-                            <td>a is greater than or equal to b</td>
+                            <td>cat</td>
+                            <td>Concatenate</td>
+                            <td>Prints the contents of a file. Takes a filename as an argument</td>
                         </tr>
                     </table>
-                    <pre class="fragment"><code contenteditable class="python">
-a = 3
-b = 4
-print a != b
-print a <= 3
-print a >= 4
+                </section>
+
+                <section>
+                    <h3>Creating a folder</h3>
+                    <p>We need a folder to save our work in.</p>
+                    <p class="fragment">The -&gt;'s below indicate the expected output of the previous command.</p>
+                    <pre><code contenteditable class="fragment bash">
+pwd
+-> /home/username
+mkdir Projects
+cd Projects
+mkdir gdi-intro-python
+cd gdi-intro-python
+pwd
+-> /home/username/Projects/gdi-intro-python
                     </code></pre>
-                    <p class="fragment">Remember: Equals does not equal "equals equals"</p>
+                    <p class="fragment">Now that the folders are made, we only have to use 'cd Projects/gdi-intro-python' in the future.</p>
+                </section>
+
+                <section>
+                    <h3>The Text Editor</h3>
+                    <p>Open sublime text.</p>
+                    <ul>
+                        <li class="fragment">Click file, open folder. Navigate to the gdi-intro-python folder we created and click "open"</li>
+                        <li class="fragment">In the text editor, enter the following:
+                    <pre><code contenteditable class="fragment python">
+print 'I am a Python program'
+                    </code></pre>
+                        </li>
+                        <li class="fragment">Click file, save as. Type 'class1.py' and click ok.</li>
+                        <li class="fragment">Open a terminal and navigate to the gdi-intro-python folder (if not left open from before)</li>
+                        <li class="fragment">Type 'python class1.py'</li>
+                        <li class="fragment">You should see the terminal print "I am a Python program"</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>User Input</h3>
+                    <p>To obtain user input, use 'raw_input()'</p>
+                    <p class="fragment">Change the class1.py text to the following and run it again</p>
+                    <pre><code contenteditable class="fragment python">
+input_value = raw_input("Enter a radius:")
+radius = float(input_value)
+area = 3.14159 * radius ** 2
+print "The area of a circle with radius " + input_value + " is:"
+print area
+                    </code></pre>
+                    <p class="fragment">N.B. - The user's input is a string so we use float() to make it a number</p>
+                </section>
+
+                <!-- Let's develop it: 15 minutes -->
+                <section>
+                    <h3>Let's Develop It</h3>
+                    <p>Write your own program that uses raw_input and does something else with the value</p>
+                    <p>You can use float() to treat the input as a number if you need a number, or use the input directly as a string</p>
                 </section>
 
                 <section>
