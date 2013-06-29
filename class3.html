@@ -115,7 +115,7 @@ def print_hypotenuse(x1, y1, x2, y2):
                 <section>
                     <h3>Method Calls</h3>
                     <p>A <strong>method</strong> is like a function but it is "bound" to an object.</p>
-                    <p class="fragment">For instance, the integers and strings we've been using all along have methods attached to them</p>
+                    <p class="fragment">For example, the integers and strings we've been using have methods attached to them</p>
                     <p class="fragment">We can use the dir() function to see the methods of an object and help() to see what they do.</p>
                     <pre><code contenteditable class="fragment python">
 a = 4
@@ -150,7 +150,7 @@ words = [0, 'list', 'of', 3, 'strings', 'and', 'numbers']
                 <section>
                     <h3>List Methods</h3>
                     <p>Lists have several methods, the most useful of which is `append`</p>
-                    <p class="fragment">A list can come into the world empty and have values added to it with `append`</p>
+                    <p class="fragment">A list can be created as an empty list and have values added to it with `append`</p>
                     <pre><code contenteditable class="fragment python">
 to_dos = []
 to_dos.append('buy soy milk')
@@ -203,7 +203,7 @@ print to_dos[1]
 print to_dos[-1]
                     </code></pre>
                     <p class="fragment">Negative numbers mean "go back from the end this many". e.g. -1 is the last element, -2 is the penultimate</p>
-                    <p class="fragment">An IndexError results if an exceeds the length of the list - 1</p>
+                    <p class="fragment">An IndexError results if an index exceeds the length of the list minus 1</p>
                 </section>
 
                 <section>
@@ -312,13 +312,14 @@ set_a = {0, 3, 7} # and so on
                     <p class="fragment">For dictionaries, the keys are searched for the element.</p>
                     <pre><code contenteditable class="fragment python">
 color = (255, 255, 0)
-menu = {'tofu': 4}
-names = ['Mary', 'Martha', 'George']
-
-print 'tofu' in menu
-george_present = 'George' in names
 if 0 in color:
     print '0 is in the color'
+
+menu = {'tofu': 4}
+print 'tofu' in menu
+
+names = ['Mary', 'Martha', 'George']
+george_present = 'George' in names
                     </code></pre>
                 </section>
 
@@ -407,7 +408,7 @@ all_to_dos['baby'].append('cry')
 
                 <section>
                     <h3>Means of Combination</h3>
-                    <p>Lists, dictionaries, sets, tuples, and other collections are means of combination.</p>
+                    <p>Lists, dictionaries, sets, tuples, and other collections are all a means of combination.</p>
                     <p class="fragment">They can be freely combined to create the data structure needed for a particular problem</p>
                     <p class="fragment">Eg. A list of dictionaries with lists</p>
                     <pre><code contenteditable class="fragment python">
