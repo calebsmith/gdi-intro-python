@@ -303,11 +303,12 @@ dimensions = find_width_height(point_a, point_b)
                 <section>
                     <h3>Sets</h3>
                     <p><strong>Sets</strong> are unordered collections whose elements are unique. Therefore, adding a value to a set that already has it, does nothing.</p>
-                    <p class="fragment">Sets can be created with comma separated elements enclosed in '{}' in Python 2.7. Usually, just make a list and use the set() function</p>
+                    <p class="fragment">Sets can be created with comma separated elements enclosed in '{}' in Python 2.7. Very often, one will make a list and use the set() function</p>
                     <pre><code contenteditable class="fragment python">
 set_a = set([0, 3, 7])
 set_b = set([0, 4, 7])
 
+# .add() is like .append() but for sets
 print set_a.add(4)
 
 # or in 2.7
@@ -334,13 +335,37 @@ george_present = 'George' in names
                 </section>
 
                 <!-- Let's develop it: 15 minutes -->
-                <!-- TODO: Add a task here that loads and processes a file into a list or dictionary -->
                 <section>
                     <h3>Let's Develop It</h3>
-                    <p></p>
+                    <p>Write a program that opens a text file and does some processing.</p>
+                    <ul>
+                        <li>The program should take a word as input and determine if the word appears in the file</li>
+                        <li>The program should use at least one function to do its work and you should be able to import this function in a Python shell and call it with a word and filename</li>
+                        <li>Use the functions from <a href="http://calebsmith.github.io/gdi-intro-python/examples/helpers.py">helpers.py</a> to help with reading in the lines and/or words of the file</li>
+                        <li>Download a book in plain text from <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenburg</a> and put it into the same directory as your python file.</li>
+                    </ul>
+                    <p>The next slide has some code and other resources that should help you get started</p>
                 </section>
 
-                <!-- Block 3 30 minutes -->
+                <section>
+                    <h3>Let's Develop It- Example Code</h3>
+                    <pre><code contenteditable class="python">
+from helpers import generate_lines_from_file
+
+def is_word_in_file(word, filename):
+    for line in generate_lines_from_file(filename):
+        # line will be a string of each line of the file in order
+        # Your code goes here. 
+        # Your code should do something with the word and line variables and assign the value to a variable for returning 
+
+input_word = raw_input("Enter a word to search for:")
+answer = is_word_in_file(input_word, 'pride.txt')
+# Display the answer in some meaningful way
+                    </code></pre>
+                    <p>I have used <a href="http://calebsmith.github.io/gdi-intro-python/examples/pride.txt">Pride and Prejudice</a> from Project Gutenburg with my example code. You can click this link and copy/paste the text into a new text file called 'pride.txt' and save it in the same folder as your code</p>
+                </section>
+
+                <!-- Block 3 20 minutes -->
                 <section>
                     <h3>Lists of ... Lists</h3>
                     <p>Lists can contain not only numbers or strings, but also other lists.</p>
@@ -510,15 +535,46 @@ for width, height in zip(widths, heights):
                     </code></pre>
                 </section>
 
-                <!-- TODO: Add an excercise here that loads a book from Project Gutenber and does something interesting. -->
-                <!-- Let's develop it: 15 minutes -->
+                <!-- Let's develop it: 25 minutes -->
                 <section>
                     <h3>Let's Develop It</h3>
-                    <p></p>
+                    <p>Write a program that expands on your previous one. If it is unfinished, feel free to finish the original exercise first. To exand on it, choose one of the following:</p>
+                    <ol>
+                        <li>Determine how many times the user provided word appears in the file and/or what lines it appears on</li>
+                        <li>Change the program so that it counts the number of times each word occurs. E.g. A dictionary of all words in the file, whose values are a count of their occurrences</li>
+                        <li>Use <a href="http://calebsmith.github.io/gdi-intro-python/examples/boilerplate.py">boilerplate.py</a> to help you improve the reusability of the program. (The comments in that file should explain the how and why)</li> 
+                    </ol>
+                    <p>Resources for this and the previous exercise are provided on the next slide for convenience</p>
                 </section>
 
                 <section>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li>Helper functions are in <a href="http://calebsmith.github.io/gdi-intro-python/examples/helpers.py">helpers.py</a></li>
+                        <li>Download a book in plain text from <a href="http://www.gutenberg.org/wiki/Main_Page">Project Gutenburg</a> and put it into the same directory as your python file.</li>
+                        <li>You can use this link for <a href="http://calebsmith.github.io/gdi-intro-python/examples/pride.txt">Pride and Prejudice</a>. Click this link and copy/paste the text into a new text file called 'pride.txt' and save it in the same folder as your code</li>
+
+                    </ul>
+                    <pre><code contenteditable class="python">
+from helpers import generate_lines_from_file
+
+def is_word_in_file(word, filename):
+    for line in generate_lines_from_file(filename):
+        # line will be a string of each line of the file in order
+        # Your code goes here. Do something with the word and line variables
+    return result
+
+input_word = raw_input("Enter a word to search for:")
+answer = is_word_in_file(input_word, 'pride.txt')
+# Display the answer in some meaningful way
+                    </code></pre>
                 </section>
+
+                <section>
+                    <h3>Questions?</h3>
+                </section>
+
+                <section></section>
             </div>
             <footer>
                 <div class="copyright">
