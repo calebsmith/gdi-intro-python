@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#/usr/bin/python
 """
 Suitable for hacking after class 3.
 
@@ -21,12 +21,11 @@ PUNCTUATION_CHARS = string.punctuation.replace('-', '').replace("'", '')
 
 def file_reader(filename):
     """
-    Given a filename, returns a list of strings for each line in the file
+    Given a filename, yields each line in the file
     """
-    f = open(filename, 'r')
-    file_contents = f.readlines()
-    f.close()
-    return file_contents
+    with open(filename, 'r') as f:
+        for line in f:
+            yield line.strip()
 
 
 def remove_punctuation(line):
@@ -35,6 +34,37 @@ def remove_punctuation(line):
     the resulting string
     """
     return line.translate(string.maketrans('', ''), PUNCTUATION_CHARS)
+
+
+def generate_cleaned_lines(filename):
+    """
+    Given a filename, yields each line of the file without punctuation
+    """
+    return (
+        remove_punctuation(line.replace('--', ' '))
+        for line in file_reader(filename)
+    )
+
+
+def generate_words(filename):
+    """
+    Given a filename, generates every word of the file in lowercase, stripping
+    any whitespace or punctuation. Numbers are also removed
+    """
+    cleaned_lines = generate_cleaned_lines(filename)
+    return (
+        word.lower()
+        for line in cleaned_lines for word in line.split()
+        if not word.isdigit() and not word.startswith("'")
+    )
+
+
+def get_words_list(filename):
+    """
+    Given a filename, returns a list of words in that file, using the same
+    stripping rules as generate_words()
+    """
+    return list(generate_words(filename))
 
 
 def get_english_words():
