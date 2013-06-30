@@ -38,7 +38,7 @@
                     <h3>Intro to Python</h3>
                     <h4>Class 3</h3>
                 </section>
-                <!-- Block 1 -->
+                <!-- Block 1 25 minutes -->
                 <section>
                     <h3>Review</h3>
                     <ul>
@@ -132,7 +132,17 @@ help(name.upper)
                     </code></pre>
                 </section>
 
-                <!-- Block 2 -->
+                <!-- Let's develop it: 5 minutes -->
+                <section>
+                    <h3>Let's Develop It</h3>
+                    <p>Open a Python shell and define a string varaible</p>
+                    <p>Use 'dir(string_variable)' and the help() function to explore the various methods
+                    <p>Hint: Like functions, some methods take arguments and others don't</p>
+                    <p>Hint: Use help() on a method. It will tell you the arguments to use and the expected behavior</p>
+                    <p>Hint: Don't be afraid of errors. They seem to be in a foreign language but they are there to help you. Read them carefully.</p>
+                </section>
+
+                <!-- Block 2 30 minutes -->
                 <section>
                     <h3>Lists</h3>
                     <p>A list is an ordered collection of elements</p>
@@ -323,12 +333,19 @@ george_present = 'George' in names
                     </code></pre>
                 </section>
 
-                <!-- Block 3 -->
+                <!-- Let's develop it: 15 minutes -->
+                <!-- TODO: Add a task here that loads and processes a file into a list or dictionary -->
+                <section>
+                    <h3>Let's Develop It</h3>
+                    <p></p>
+                </section>
+
+                <!-- Block 3 30 minutes -->
                 <section>
                     <h3>Lists of ... Lists</h3>
                     <p>Lists can contain not only numbers or strings, but also other lists.</p>
                     <p class="fragment">Such a structure is said to be  <strong>nested</strong></p>
-                    <p class="fragment">The following is a list of lists that is defined literally:</p>
+                    <p class="fragment">The following is a list of lists:</p>
                     <pre><code contenteditable class="fragment python">
 game_board = [
     ['O', 'X', ' '],
@@ -379,7 +396,7 @@ hand = [card_a, card_b]
 
 print 'The hand contains:'
 for card in hand:
-    print 'A {0} of {1}'.format(card['number'], card['suit'])
+    print 'A', card['number'], 'of', card['suit']
                     </code></pre>
                 </section>
 
@@ -399,8 +416,9 @@ all_to_dos = {
 }
 
 for name, to_dos in all_to_dos.items():
-    print '{0} needs to: {1}'.format(name, to_dos)
+    print name, 'needs to: ', to_dos
 
+# Changing this later can be accomplished with
 all_to_dos['baby'].append('cry')
                     </code></pre>
                     <p class="fragment">Now the to do lists can be indexed or modified by name</p>
@@ -490,6 +508,13 @@ heights = [5, 8, 12]
 for width, height in zip(widths, heights):
     print 'Area is {0}'.format(width * height)
                     </code></pre>
+                </section>
+
+                <!-- TODO: Add an excercise here that loads a book from Project Gutenber and does something interesting. -->
+                <!-- Let's develop it: 15 minutes -->
+                <section>
+                    <h3>Let's Develop It</h3>
+                    <p></p>
                 </section>
 
                 <section>
