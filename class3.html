@@ -350,10 +350,10 @@ george_present = 'George' in names
                 <section>
                     <h3>Let's Develop It- Example Code</h3>
                     <pre><code contenteditable class="python">
-from helpers import generate_lines_from_file
+from helpers import generate_cleaned_lines
 
 def is_word_in_file(word, filename):
-    for line in generate_lines_from_file(filename):
+    for line in generate_cleaned_lines(filename):
         # line will be a string of each line of the file in order
         # Your code goes here.
         # Your code should do something with the word and line variables and assign the value to a variable for returning
@@ -538,7 +538,7 @@ for width, height in zip(widths, heights):
                 <!-- Let's develop it: 25 minutes -->
                 <section>
                     <h3>Let's Develop It</h3>
-                    <p>Write a program that expands on your previous one. If it is unfinished, feel free to finish the original exercise first. To exand on it, choose one of the following:</p>
+                    <p>Write a program that expands on your previous one. If it is unfinished, feel free to finish the original exercise first. To expand on it, choose one of the following:</p>
                     <ol>
                         <li>Determine how many times the user provided word appears in the file and/or what lines it appears on</li>
                         <li>Change the program so that it counts the number of times each word occurs. E.g. A dictionary of all words in the file, whose values are a count of their occurrences</li>
@@ -556,10 +556,10 @@ for width, height in zip(widths, heights):
 
                     </ul>
                     <pre><code contenteditable class="python">
-from helpers import generate_lines_from_file
+from helpers import generate_cleaned_lines
 
 def is_word_in_file(word, filename):
-    for line in generate_lines_from_file(filename):
+    for line in generate_cleaned_lines(filename):
         # line will be a string of each line of the file in order
         # Your code goes here. Do something with the word and line variables
     return result
