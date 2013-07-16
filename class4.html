@@ -203,7 +203,7 @@ class Mobile(object):
 
                 <section>
                     <h3>Inheritance Continued</h3>
-                    <p></p>
+                    <p>The move_up method is <strong>overridden</strong> in the child class below:</p>
                     <pre><code contenteditable class="fragment python">
 class BoundedMobile(Mobile):
     """
@@ -217,6 +217,24 @@ class BoundedMobile(Mobile):
             self.y = 0
                     </code></pre>
                     <p class="fragment">See <a href="http://calebsmith.github.io/gdi-intro-python/examples/mobile.py">mobile.py</a> for a more complete example.</p>
+                </section>
+
+                <section>
+                    <h3>What's Super about Super</h3>
+                    <p><strong>super</strong> is often helpful when writing methods that override the method of the parent class</p>
+                    <pre><code contenteditable class="fragment python">
+class BoundedMobile(Mobile):
+    """
+    An object with an x, y position, and methods for moving
+    The x, y position must be within bounds
+    """
+
+    def move_up():
+        super(BoundedMobile, self).move_up()
+        if self.y < 0:
+            self.y = 0
+                    </code></pre>
+                    <p class="fragment">The call to super() takes the name of the child class, followed by self. This is followed by the method call and any arguments to pass to it</p>
                 </section>
 
                 <section>
