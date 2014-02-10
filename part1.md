@@ -65,11 +65,150 @@ Note: Caktus uses Python
 
 ###Command line, Python Shell, Text Editors</h3>
 
-Program          | Description
------------------|----------
-**Terminal**     | A program that has a command line interface and issues commands to the operating system.
-**Python Shell** | A command line program that runs inside of the terminal, takes Python code as input, interprets it, and prints out any results.
-**Text Editor**  | A program that opens text files and allows the user to edit and save them. (Different than a word processor).
+Program      | Description
+-------------|----------
+Terminal     | A program that has a command line interface and issues commands to the operating system.
+Python Shell | A command line program that runs inside of the terminal, takes Python code as input, interprets it, and prints out any results.
+Text Editor  | A program that opens text files and allows the user to edit and save them. (Different than a word processor).
+@@@
+
+###Example Text Editors
+
+Platform  | Examples
+----------|----------
+Linux     | Gedit, Jedit, Kate
+MacOSX    | TextMate, TextWrangler
+Windows   | Notepad++
+All       | Sublime Text, Vim, Emacs
+@@@
+
+###Let's Develop It
+Let's setup our computer for Python programming
+
+* Let's install a text editor - [Install Sublime Text 3](http://www.sublimetext.com/3)
+* [Install Python](http://www.python.org/download/) - (This step is for Windows users only. GNU/Linux and MacOSX come with Python installed)
+* (Windows only): After installing Python, open the "powershell" program and type:
+<pre style="width: 100%">[Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python27", "User")</pre>
+* Locate and run the terminal program. Type 'python' and hit enter.
+* More setup instructions are available: [here](http://learnpythonthehardway.org/book/ex0.html)
+* (You can, but don't have to install the other text editors recommended in this guide)
+Note: 15 minutes
+@@@
+
+##Block 2
+Note: 30 minutes
+@@@
+
+###Working in the Python Shell
+
+Open up your terminal and type 'python' <!-- .element class="left-align" -->
+
+* Follow along with the examples in the slides. Type them in! <!-- .element class="fragment" -->
+* Feel free to explore as well. You will not accidentally break things <!-- .element class="fragment" -->
+* $ means you are in the terminal (not python). >>> means you are in python <!-- .element class="fragment" -->
+* Type exit() to leave python and return to the terminal. <!-- .element class="fragment" -->
+
+@@@
+
+###Variables and Arithmetic
+```python
+>>> 3 + 4
+7
+>>> 2 * 4
+8
+>>> 6 - 2
+4
+>>> 4 / 2
+2
+```
+```python
+>>> a = 2
+>>> print a
+2
+>>> b = 3
+>>> c = a + b
+>>> print c
+5
+```
+```python
+>>> a = 0
+>>> a = a + .5
+>>> print a
+0.5
+```
+@@@
+
+###Strings
+```python
+>>> a = 'Hello '
+>>> b = 'World'
+>>> c = a + b
+>>> print c
+'Hello World'
+```
+```python
+>>> a = "Spam "
+>>> b = a * 4
+>>> print b
+"Spam Spam Spam Spam"
+```
+@@@
+
+###Data types
+* Variables are names of objects <!-- .element class="fragment" -->
+* Among other things, variables are used to represent something that can't be known until the program is run <!-- .element class="fragment" -->
+* Objects always have a "type" <!-- .element class="fragment" -->
+* The type of an object helps define what it can do <!-- .element class="fragment" -->
+* The type can be found using: type() <!-- .element class="fragment" -->
+* type() is a function. We call it by using parenthesis and pass it an object by placing the object inside the parenthesis <!-- .element class="fragment" -->
+```python
+>>> print type(4)
+<type 'int'>
+>>> a = 4
+>>> print type(a)
+<type 'int'>
+>>> print type("But I don't like spam")
+<type 'str'>
+>>> print type(3.5)
+<type 'float'>
+```
+@@@
+
+###Data types - continued ...
+* Objects can be used with a set of operators <!-- .element class="fragment" -->
+* An int or float can be used with any of: +, -, *, / <!-- .element class="fragment" -->
+* A string can be used with any of: +, * <!-- .element class="fragment" -->
+* What happens if we try to use division or subtraction with a string? <!-- .element class="fragment" -->
+```python
+>>> print "Spam" / "eggs"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+```
 @@@
 
 
+###Errors
+
+* There are different kinds of errors that can occur. We've seen a few of these so far <!-- .element class="fragment" -->
+* A runtime error results in an Exception. An Exception gives us some information about the nature of the error and how to correct it <!-- .element class="fragment" -->
+* One type of exception is a SyntaxError. This results when our code can not be evaluated because it is incorrect at a syntactic level. In other words, we are not following the "rules" of the language. <!-- .element class="fragment" -->
+* Some other examples are the TypeError and NameError exceptions. <!-- .element class="fragment" -->
+@@@
+
+###Errors - continued ...
+
+* A \# is a code comment. These are not evaluated by Python
+
+```python
+# SyntaxError - Doesn't conform to the rules of Python.
+# This statement isn't meaningful to the computer
+>>> 4spam)eggs(garbage) + 10
+
+# NameError - Using a name that hasn't been defined yet.
+>>> a = 5
+>>> print b
+
+# TypeError - Using an object in a way that its type does not support
+>>> 'string1' / 'string2'
+```

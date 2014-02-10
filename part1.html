@@ -19,7 +19,6 @@
 
 
         <!-- If use the PDF print sheet so students can print slides-->
-
         <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
 
         <!--[if lt IE 9]>
@@ -33,177 +32,13 @@
             <div class="slides">
                 <!-- load the markdown file for all of the slide content -->
                 <section data-markdown="part1.md"
-                         data-separator="^@@@\n\n"
-                         data-vertical="^\n\n"
-                         data-notes="^Note:">
+                     data-separator="^@@@\n\n"
+                     data-vertical="^\n\n"
+                     data-notes="^Note:">
                 </section>
 
-                <!-- Block 1: 25 minutes -->
-                <section>
-                    <h3>Example Text Editors</h3>
-                    <table>
-                        <tr>
-                            <td><strong>Linux</strong></td>
-                            <td>Gedit, Jedit, Kate</td>
-                        </tr>
-                        <tr>
-                            <td><strong>MacOSX</strong></td>
-                            <td>TextMate, TextWrangler</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Windows</strong></td>
-                            <td>Notepad++</td>
-                        </tr>
-                        <tr>
-                            <td><strong>All</strong></td>
-                            <td>Sublime Text, Vim, Emacs</td>
-                        </tr>
-                    </table>
-                </section>
-
-                <!-- Let's develop it: 10 minutes-->
-                <section>
-                    <h3>Let's Develop It</h3>
-                    <p>Let's setup our computer for Python programming</p>
-                    <ul>
-                        <li>
-                            Let's install a text editor -
-                            <a href="http://www.sublimetext.com/2">Install Sublime Text 2</a>
-                        </li>
-                        <li>
-                            <a href="http://www.python.org/download/">Install Python</a>
-                            (This step is for Windows users only. GNU/Linux and MacOSX come with Python installed)
-                        </li>
-                        <li>
-                            (Windows only): After installing Python, open the "powershell" program and type:
-                            <pre>[Environment]::SetEnvironmentVariable("Path", "$env:Path;C:\Python27", "User")</pre>
-                        </li>
-                        <li>
-                            Locate and run the terminal program. Type 'python' and hit enter.
-                        </li>
-                        <li>
-                            More setup instructions are available:
-                            <a href="http://learnpythonthehardway.org/book/ex0.html">here</a>
-                            (You can, but don't have to install the other text editors recommended in this guide)
-                        </li>
-                    </ul>
-                </section>
                 <!-- Block 2: 30 minutes -->
-                <section>
-                    <h3>Working in the Python Shell</h3>
-                    <p>Open up your terminal and type 'python'</p>
-                    <p class="fragment">Follow along with the examples in the slides. Type them in!</p>
-                    <p class="fragment">Feel free to explore as well. You will not accidentally break things</p>
-                </section>
 
-                <section>
-                    <h3>Variables and Arithmetic</h3>
-                    <pre><code contenteditable class="python">
-3 + 4
-2 * 4
-6 - 2
-4 / 2
-                    </code></pre>
-                    <pre><code contenteditable class="python">
-a = 2
-b = 3
-print a + b
-c = a + b
-print c * 2
-                    </code></pre>
-                    <pre><code contenteditable class="python">
-a = 0
-a = a + .5
-print a
-                    </code></pre>
-                </section>
-
-                <section>
-                    <h3>Strings</h3>
-                    <pre><code contenteditable class="python">
-a = 'Hello '
-b = 'World'
-c = a + b
-print c
-                    </code></pre>
-                    <pre><code contenteditable class="python">
-a = "Spam "
-b = a * 4
-print b
-                    </code></pre>
-                    <pre><code contenteditable class="python">
-a = 'spam '
-b = 'eggs'
-c = a * 4 + b
-print c
-                    </code></pre>
-                </section>
-
-                <section>
-                    <h3>Data types</h3>
-                    <ul>
-                        <li>Variables are names of objects</li>
-                        <li>Among other things, variables are used to represent something that can't be known until the program is run</li>
-                        <li>Objects always have a "type"</li>
-                        <li>The type of an object helps define what it can do</li>
-                        <li>The type can be found using: `type()`</li>
-                        <li>type() is a <strong>function</strong>. We call it by using parenthesis and pass it an object by placing the object inside the parenthesis</li>
-                    </ul>
-                    <pre><code contenteditable class="python">
-a = 4
-print type(a)
-print type(4)
-
-print type(3.14)
-
-b = 'spam, again'
-print type(b)
-print type("But I don't like spam")
-                    </code></pre>
-                </section>
-
-                    <section>
-                        <h3>Data types - continued ...</h3>
-                        <ul>
-                            <li>Objects can be used with a set of <strong>operators</strong></li>
-                            <li>An int or float can be used with any of: +, -, *, /</li>
-                            <li>A string can be used with any of: +, *</li>
-                            <li>What happens if we try to use division or subtraction with a string?</li>
-                        </ul>
-                    <pre><code contenteditable class="python">
-print "Spam" - "am"
-a = 'Spam and eggs'
-print a / 'hashbrowns'
-print a / 6
-                    </code></pre>
-                    </section>
-
-                    <section>
-                        <h3>Errors</h3>
-                        <ul>
-                            <li class="fragment">There are different kinds of errors that can occur. We've seen a few of these so far</li>
-                            <li class="fragment">A runtime error results in an <strong>Exception</strong> of which there are several types. Each type gives us some information about the nature of the error and how to correct it</li>
-                            <li class="fragment">One type of exception is a <strong>SyntaxError</strong>. This results when our code can not be evaluated because it is incorrect at a syntactic level. In other words, we are not following the "rules" of the language.</li>
-                            <li class="fragment">Some other examples are the <strong>TypeError</strong> and <strong>NameError</strong> exceptions.</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                    <h3>Errors - continued ...</h3>
-                    <pre><code contenteditable class="python">
-# SyntaxError - Doesn't conform to the rules of Python. This statement isn't meaningful to the computer
-4spam)eggs(garbage) + 10
-
-# NameError - Using a name that hasn't been defined yet
-a = 5
-print b
-b = 10
-
-# TypeError - Using an object in a way that its type does not support
-'string1' - 'string2'
-                    </code></pre>
-                    <p class="fragment">There are also <strong>semantic</strong> errors. These are harder to catch because the computer can't catch them for us.</p>
-                </section>
 
                 <!-- Let's develop it: 10 minutes -->
                 <section>
