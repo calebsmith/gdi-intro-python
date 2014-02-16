@@ -212,3 +212,92 @@ TypeError: unsupported operand type(s) for /: 'str' and 'str'
 # TypeError - Using an object in a way that its type does not support
 >>> 'string1' / 'string2'
 ```
+@@@
+
+###Let's Develop It
+* We'll practice what we've learned in the shell
+* Review the slides on your computer and practice entering any commands you didn't fully understand before
+* Ask the teacher or a TA for any help
+Note: Let's develop it: 30 minutes.
+@@@
+
+###Using the terminal
+Try each of the following commands in turn:
+
+Command         | Short for               | Description
+----------------|-------------------------|-------------
+pwd             | Print working directory | Displays what folder you are in
+ls              | List                    | Displays the files and folders in the current folder
+cd <folder>     | Change Directory        | Change to another folder, where <folder> is the target
+cat <filename>  | Concatenate k           | Prints the contents of the file
+file <filename> | File                    | Displays the type of the file
+
+Note: Block 3 begins, 30 minutes
+@@@
+
+###Creating a folder
+We need a folder to save and run our code from.
+
+($ shows the shell prompt where commands are entered. Lines without $ are output)
+```bash
+$ cd
+$ pwd
+/home/username ( or /User/username or similar)
+$ mkdir gdipython
+$ cd gdipython
+$ pwd
+/home/username/gdipython
+```
+Now that the folders are made, we only have to use this in the future:
+
+`$ cd ~/gdipython`
+@@@
+
+###The Text Editor
+Open sublime text.
+
+* Click File, then Open folder. Navigate to the gdipython folder we created and click "open"
+* In the text editor, enter the following:
+
+```python
+print 'This is a Python program'
+```
+
+* Click file, save as. Type 'program.py' and click ok.
+
+---
+Open a terminal and type
+```bash
+$ cd
+$ cd gdipython
+$ python program.py
+```
+
+You should see the terminal print:
+
+`This is a Python program`
+@@@
+
+###User Input
+To obtain user input, use 'raw_input()'. This will become a string
+
+We use float() to make it a number
+
+Change the program.py text to the following and run it again
+```python
+input_value = raw_input("Enter a radius:")
+radius = float(input_value)
+area = 3.14159 * radius * radius
+print "The area of a circle with radius", input_value, "is", area
+```
+@@@
+
+###Let's Develop It
+Write your own program that uses raw_input and does something else with the value
+
+You can use float() or int() to treat the input as a number if you need a number, or you can use the input directly if you need a string
+
+Note: Let's develop it: 15 minutes
+@@@
+
+###Questions?

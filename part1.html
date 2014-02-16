@@ -6,7 +6,7 @@
 
         <title>Intro to Python ~ Girl Develop It</title>
 
-        <meta name="description" content="This is the Girl Develop It Core Intro to Python course. The course is meant to be taught in four two-hour sessions. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+        <meta name="description" content="This is the Girl Develop It Intro to Python course. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
         <meta name="author" content="Girl Develop It">
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -36,111 +36,6 @@
                      data-vertical="^\n\n"
                      data-notes="^Note:">
                 </section>
-
-                <!-- Block 2: 30 minutes -->
-
-
-                <!-- Let's develop it: 10 minutes -->
-                <section>
-                    <h3>Let's Develop It</h3>
-                    <p>We'll practice what we've learned in the shell</p>
-                    <p>Review the slides on your computer and practice entering any commands you didn't fully understand before</p>
-                    <p>Ask the teacher or a TA for any help</p>
-                </section>
-
-                <!-- Block 3 30 minutes -->
-
-                <section>
-                    <h3>Using the Terminal</h3>
-                    <p>Try each of the following commands in turn:</p>
-                    <table>
-                        <tr>
-                            <th><strong>Command</strong></th>
-                            <th><strong>Short for</strong></th>
-                            <th><strong>Description</strong></th>
-                        </tr>
-                        <tr>
-                            <td>pwd</td>
-                            <td>Print working directory</td>
-                            <td>Displays what folder you are in.</td>
-                        </tr>
-                        <tr>
-                            <td>ls</td>
-                            <td>List</td>
-                            <td>Lists the files and folders in the current folder</td>
-                        </tr>
-                        <tr>
-                            <td>cd</td>
-                            <td>Change directory</td>
-                            <td>Change to another folder. Takes the folder name as an argument. 'cd ..' goes up a directory</td>
-                        </tr>
-                        <tr>
-                            <td>cat</td>
-                            <td>Concatenate</td>
-                            <td>Prints the contents of a file. Takes a filename as an argument</td>
-                        </tr>
-                    </table>
-                </section>
-
-                <section>
-                    <h3>Creating a folder</h3>
-                    <p>We need a folder to save our work in.</p>
-                    <p class="fragment">The -&gt;'s below indicate the expected output of the previous command.</p>
-                    <pre><code contenteditable class="fragment bash">
-pwd
--> /home/username
-mkdir Projects
-cd Projects
-mkdir gdi-intro-python
-cd gdi-intro-python
-pwd
--> /home/username/Projects/gdi-intro-python
-                    </code></pre>
-                    <p class="fragment">Now that the folders are made, we only have to use 'cd Projects/gdi-intro-python' in the future.</p>
-                </section>
-
-                <section>
-                    <h3>The Text Editor</h3>
-                    <p>Open sublime text.</p>
-                    <ul>
-                        <li class="fragment">Click file, open folder. Navigate to the gdi-intro-python folder we created and click "open"</li>
-                        <li class="fragment">In the text editor, enter the following:
-                    <pre><code contenteditable class="fragment python">
-print 'I am a Python program'
-                    </code></pre>
-                        </li>
-                        <li class="fragment">Click file, save as. Type 'class1.py' and click ok.</li>
-                        <li class="fragment">Open a terminal and navigate to the gdi-intro-python folder (if not left open from before)</li>
-                        <li class="fragment">Type 'python class1.py'</li>
-                        <li class="fragment">You should see the terminal print "I am a Python program"</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>User Input</h3>
-                    <p>To obtain user input, use 'raw_input()'</p>
-                    <p class="fragment">Change the class1.py text to the following and run it again</p>
-                    <pre><code contenteditable class="fragment python">
-input_value = raw_input("Enter a radius:")
-radius = float(input_value)
-area = 3.14159 * radius ** 2
-print "The area of a circle with radius " + input_value + " is:"
-print area
-                    </code></pre>
-                    <p class="fragment">N.B. - The user's input is a string so we use float() to make it a number</p>
-                </section>
-
-                <!-- Let's develop it: 15 minutes -->
-                <section>
-                    <h3>Let's Develop It</h3>
-                    <p>Write your own program that uses raw_input and does something else with the value</p>
-                    <p>You can use float() to treat the input as a number if you need a number, or use the input directly as a string</p>
-                </section>
-
-                <section>
-                    <h3>Questions?</h3>
-                </section>
-                <section></section>
             </div>
             <footer>
                 <div class="copyright">
@@ -178,4 +73,3 @@ print area
         </script>
     </body>
 </html>
-
