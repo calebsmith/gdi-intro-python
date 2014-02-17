@@ -4,10 +4,10 @@ from livereload import Server
 
 DEFAULT_PORT = 8000
 patterns = [
-    '*.md',
+    'slides/*.md',
     '*.html',
-    '/images',
-    '/css',
+    'images/',
+    'css/',
 ]
 
 server = Server()
