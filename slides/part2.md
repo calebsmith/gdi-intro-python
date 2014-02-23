@@ -168,10 +168,28 @@ print 'Done'
 The while statement takes a boolean expression, and as long as it evaluates to True, the code block beneath it is repeated.
 
 This creates a **loop**. Without the `x = x - 1` statement, this would be an **infinite loop**
+
 Note: Block 2 - 25 minutes
 @@@
 
-###While loops
+###While loops continued
+
+A loop can also terminate at any point with a **break** statement
+
+An infinite loop can be created using an expression that is always True.
+
+This is most commonly done with the constant True.
+
+```python
+while True:
+    name = raw_input("What is your name (type 'quit' to quit)? ")
+    if name == 'quit':
+        break
+    print "Hello,", name
+```
+
+
+###While loops example
 Consider the following example that uses iteration to derive a factorial
 
 (A factorial of a number is equal to that number * every positive integer less than that number. E.g. The factorial of 4 is `4 * 3 * 2 * 1`, which equals 24
@@ -223,10 +241,202 @@ The for loop has three parts:
 * Hint:
 ```python
 result = 0
-input_value = raw_input("Enter a number:")
-while input_value ...
-    ...
+while True:
+    input_value = raw_input("Enter a number:")
+    ... (put more code here) ...
 print "The sum is", result
 ```
 
 Note: Let's Develop It - 10 minutes
+@@@
+
+###Functions
+
+Also known as "procedures"
+
+- A named unit of code that performs a specific task
+
+When one uses a function, one makes a function **call**
+
+We have already made a function call when using the type, int, or float functions
+
+```python
+>>> a = '3'
+>>> print type(a)
+<type 'str'>
+>>> a = float(a)
+>>> print type(a)
+<type 'float'>
+```
+@@@
+
+###Function calls
+
+```python
+# Repeating the previous example for reference
+>>> a = 3
+>>> print type(a)
+<type 'int'>
+```
+
+A function can take **arguments** (sometimes called **parameters**)
+
+In the example above, the variable `a` is passed as an argument to the function `type`
+
+A function call can be an argument to another function call.
+
+```python
+# Some more function call examples
+
+>>> str(int(3.2))
+'3'
+```
+@@@
+
+###Function definition
+
+The following example is a **function definition**. This allows us to create our own functions
+
+```python
+def print_greeting(name):
+    print "Hi", name
+    print "How are you"
+```
+
+The function definition has the following parts
+
+* The <strong>def</strong> keyword signifies we are defining a function</li>
+* The name of the function being defined - `print_greeting`</li>
+* The arguments in parentheses - `name`</li>
+* The function <strong>body</strong>, which is a block of indented code that executes when the function is called. - `print "Hi", name...`</li>
+@@@
+
+###Function returns</h3>
+
+A function can also **return** a value
+
+To do this, one uses the **return** keyword
+```
+def plus_5(x):
+    return x + 5
+
+y = plus_5(4)
+```
+
+* This allows us to call a function to obtain a value for later use. (Not the same as printing the value)</li>
+* In this example, the function call `plus_5(4)` evaluates to 9, and y is set to this value</li>
+* To determine what a function will return, use the <strong>substitution method</strong>.</li>
+* If return is not used, the function returns <strong>None</strong></li>
+Note: Demonstrate substitution method
+@@@
+
+###Functions with no arguments
+
+A function does not have to take arguments, as in the following example:
+
+```python
+def newline():
+    print ''
+
+newline()
+# prints an empty line. Nothing is returned
+```
+
+This is useful when the function does some work but doesn't need any parameters. i.e. The function is intended to always do the same thing
+@@@
+
+###Functions with more than one argument
+
+A function can also take more than one argument separated by commas. For example:
+
+```python
+def find_rectangle_area(width, height):
+    return width * height
+
+area = find_rectangle_area(3, 4)
+# area is set to the value 12
+```
+@@@
+
+###Scope
+
+The **scope** of a variable is the area of code in which a variable is still valid and can be used.
+
+Variables defined within a function can not be used elsewhere.
+
+```python
+def get_triangle_area(base, height):
+    rect_area = base * height
+    return rect_area / 2.0
+
+triangle_area = get_triangle_area(10, 20)
+
+print triangle_area
+# 100
+print height
+# NameError
+print rect_area
+# NameError
+```
+
+Note: Draw a diagram with bubbles
+@@@
+
+###Import statements
+
+The **import** statement allows us to use Python code that is defined in one file in a different file, or inside of the shell.
+
+The **from** keyword allows us to only import parts of a Python file
+
+```python
+# In knights.py
+def shrubbery():
+    print "I am a shrubber"
+
+def ni(number):
+    print "Ni!" * 3
+```
+
+```python
+# Run a Python shell in the same directory as knights.py and enter the following
+import knights
+
+knights.shrubbery()
+knights.ni()
+
+# or
+from knights import shrubbery, ni
+shrubbery()
+ni()
+```
+@@@
+
+###Let's Develop It
+
+* Write a program that uses at least one function to solve a geometry problem
+
+* Hint: You might use a loop that obtains user input, does the calculation, then prints the answer. As before, the user should be able to quit by entering "quit"
+* Hint: You can import your function in the shell and call it with different parameters to test it out
+* Hint: Download [geometry.py](http://calebsmith.github.io/gdi-intro-python/examples/geometry.py) and use it as an example
+
+If you'd like to try something different or in addition, try the next slide...
+
+Note: Let's Develop It 15 Minutes
+@@@
+
+###Let's Develop It
+* Write a program that asks the user to guess a number between a given range, such as 1 to 10
+* The program should give the user hints such as "too high" or "too low". Alternatively, the hints might be "warm" or "cold" depending on how close they are to the number
+* The computer will need to have a random number for the user to guess:
+
+```python
+#At the top of the file
+from random import randint
+
+# Use this line where you need to have a random number.
+# (Hint, this is probably used before the loop for user input)
+random_number = randint(1, 10)
+```
+@@@
+
+###Questions?
