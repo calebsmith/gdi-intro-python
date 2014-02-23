@@ -417,7 +417,7 @@ ni()
 
 * Hint: You might use a loop that obtains user input, does the calculation, then prints the answer. As before, the user should be able to quit by entering "quit"
 * Hint: You can import your function in the shell and call it with different parameters to test it out
-* Hint: Download [geometry.py](http://calebsmith.github.io/gdi-intro-python/examples/geometry.py) and use it as an example
+* Hint: Download [geometry.py](/examples/geometry.py) and use it as an example
 
 If you'd like to try something different or in addition, try the next slide...
 
