@@ -12,16 +12,16 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <link rel="stylesheet" href="reveal/css/reveal.css">
-        <link rel="stylesheet" href="reveal/css/theme/gdicool.css" id="theme">
+        <link rel="stylesheet" href="../reveal/css/reveal.css">
+        <link rel="stylesheet" href="../css/gdicool.css" id="theme">
 
         <!-- For syntax highlighting -->
         <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
-        <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+        <!-- dark editor--><link rel="stylesheet" href="../css/dark.css">
 
         <!-- If use the PDF print sheet so students can print slides-->
-        
-        <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+
+        <link rel="stylesheet" href="../reveal/css/print/pdf.css" type="text/css" media="print">
 
         <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
@@ -34,7 +34,7 @@
             <div class="slides">
               <!-- Opening slide -->
                 <section>
-                    <img src = "images/gdi_logo_badge.png">
+                    <img src = "../images/gdi_logo_badge.png">
                     <h3>Intro to Python</h3>
                     <h4>Class 4</h4>
                 </section>
@@ -358,7 +358,7 @@ squares = map(square, range(10))
                         </tr>
                         <tr>
                             <td>Encryption</td>
-                            <td>Read about the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cipher</a> or find a similarly simple encryption mechanism online. You should find the ord() and chr() functions helpful, as well as the modulus operator '%'</td> 
+                            <td>Read about the <a href="https://en.wikipedia.org/wiki/Caesar_cipher">Caesar Cipher</a> or find a similarly simple encryption mechanism online. You should find the ord() and chr() functions helpful, as well as the modulus operator '%'</td>
                         </tr>
                     </table>
                     <p>continued on next page...</p>
@@ -418,8 +418,8 @@ squares = map(square, range(10))
             </footer>
         </div>
 
-        <script src="reveal/lib/js/head.min.js"></script>
-        <script src="reveal/js/reveal.min.js"></script>
+        <script src="../reveal/lib/js/head.min.js"></script>
+        <script src="../reveal/js/reveal.min.js"></script>
 
         <script>
             // Full list of configuration options available here:
@@ -434,12 +434,12 @@ squares = map(square, range(10))
 
                 // Optional libraries used to extend on reveal.js
                 dependencies: [
-                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
                 ]
             });
 

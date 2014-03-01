@@ -12,16 +12,15 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <link rel="stylesheet" href="reveal/css/reveal.css">
-        <link rel="stylesheet" href="reveal/css/theme/gdicool.css" id="theme">
+        <link rel="stylesheet" href="../reveal/css/reveal.css">
+        <link rel="stylesheet" href="../css/gdicool.css" id="theme">
 
         <!-- For syntax highlighting -->
-        <!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
-        <!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+        <!-- dark editor--><link rel="stylesheet" href="../css/dark.css">
 
         <!-- If use the PDF print sheet so students can print slides-->
-        
-        <link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+
+        <link rel="stylesheet" href="../reveal/css/print/pdf.css" type="text/css" media="print">
 
         <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
@@ -34,11 +33,11 @@
             <div class="slides">
               <!-- Opening slide -->
                 <section>
-                  <img src = "images/gdi_logo_badge.png">
+                  <img src = "../images/gdi_logo_badge.png">
                   <h3>Intro to Python</h3>
                   <h4>Class 1</h4>
                 </section>
-                
+
                 <!-- Welcome-->
                 <section>
                   <h3>Welcome!</h3>
@@ -53,7 +52,7 @@
                   </ul>
                   </div>
                 </section>
-                
+
                 <section>
                   <h3>What we will cover today</h3>
                   <ul>
@@ -108,7 +107,7 @@
                         <li class="fragment">To create the form of code the computer can use, we use the Python <a href="http://en.wikipedia.org/wiki/Interpreter_(computing)">interpreter</a>. Other languages use other interpreters or a <a href="http://en.wikipedia.org/wiki/Compiler">compiler</a></li>
                         <li class="fragment">Don't focus on what's "under the hood" for now. We will "drive the car" first</li>
                         <li class="fragment">In other words, there are many layers to the onion. We start at one layer and slowly move toward layers that are beneath or above us</li>
-                    </ul> 
+                    </ul>
                 </section>
 
                 <section>
@@ -189,10 +188,10 @@
                 <section>
                     <h3>Variables and Arithmetic</h3>
                     <pre><code contenteditable class="python">
-3 + 4 
-2 * 4 
-6 - 2 
-4 / 2 
+3 + 4
+2 * 4
+6 - 2
+4 / 2
                     </code></pre>
                     <pre><code contenteditable class="python">
 a = 2
@@ -405,8 +404,8 @@ print area
             </footer>
         </div>
 
-        <script src="reveal/lib/js/head.min.js"></script>
-        <script src="reveal/js/reveal.min.js"></script>
+        <script src="../reveal/lib/js/head.min.js"></script>
+        <script src="../reveal/js/reveal.min.js"></script>
 
         <script>
             // Full list of configuration options available here:
@@ -421,12 +420,12 @@ print area
 
                 // Optional libraries used to extend on reveal.js
                 dependencies: [
-                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
                 ]
             });
 

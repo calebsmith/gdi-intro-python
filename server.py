@@ -4,7 +4,7 @@ from livereload import Server
 
 DEFAULT_PORT = 8000
 patterns = [
-    'slides/*.md',
+    'set2/slides/*.md',
     '*.html',
     'images/',
     'css/',
