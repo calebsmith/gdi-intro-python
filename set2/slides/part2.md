@@ -455,7 +455,6 @@ additional features. (Finish each in order).
 [game2](http://calebsmith.github.io/gdi-intro-python/examples/game2.py)
 [game3](http://calebsmith.github.io/gdi-intro-python/examples/game3.py)
 
-
 Note: 30 minutes
 @@@
 
