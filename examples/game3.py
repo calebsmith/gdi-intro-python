@@ -9,10 +9,8 @@ In this stage, the following is already implemented:
     * Displays the board and obtains input in a loop until a user types `quit`
     * Displays the player on the board
     * Moves the player on the board when the user types input such as "up"
-
-The following needs to be implemented:
-    * Prevent the player from walking through walls
-    * Make it so the player can pick up the item (The item looks like ^)
+    * Prevents the player from walking through walls
+    * Makes it so the player can pick up the item (Item looks like ^)
 """
 from __future__ import print_function
 
@@ -59,19 +57,26 @@ def get_tile(board, x, y):
     return board[y][x]
 
 
-def display(board, player_x, player_y):
+def display(board, player_x, player_y, player_inventory):
     """
     Display the given `board` and the player at the position `player_x` and
     `player_y`
     """
-    # FIXME: Should not display the item on the board if the user has picked it
-    # up. Should display the user's inventory somewhere
+    print('Player inventory:')
+    for item in player_inventory:
+        print(item)
     for y, row in enumerate(board):
         for x, tile in enumerate(row):
             if x == player_x and y == player_y:
                 print_char('@')
             else:
-                print_char(tile)
+                if tile != '^':
+                    print_char(tile)
+                else:
+                    if '^' not in player_inventory:
+                        print_char(tile)
+                    else:
+                        print_char(' ')
         print_char('\n')
 
 
@@ -79,21 +84,26 @@ def main():
     board = load_board(DEFAULT_BOARD)
     player_x = PLAYER_X_START
     player_y = PLAYER_Y_START
+    player_inventory = []
     while True:
-        display(board, player_x, player_y)
+        display(board, player_x, player_y, player_inventory)
         move = raw_input("Choose a direction (Type `quit` to quit): ")
         if move == 'quit':
             return True
-        # FIXME: Make it so the player cannot walk through walls
-        # FIXME: Check if the user has obtained the item (A ^ on the board)
         if move == 'up':
-            player_y -= 1
+            if get_tile(board, player_x, player_y - 1) != '*':
+                player_y -= 1
         if move == 'down':
-            player_y += 1
+            if get_tile(board, player_x, player_y + 1) != '*':
+                player_y += 1
         if move == 'left':
-            player_x -= 1
+            if get_tile(board, player_x - 1, player_y) != '*':
+                player_x -= 1
         if move == 'right':
-            player_x += 1
+            if get_tile(board, player_x + 1, player_y) != '*':
+                player_x += 1
+        if get_tile(board, player_x, player_y) == '^' and '^' not in player_inventory:
+            player_inventory.append('^')
 
 
 if __name__ == '__main__':
