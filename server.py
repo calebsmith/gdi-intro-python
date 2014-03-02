@@ -52,6 +52,8 @@ def main(port):
     if LiveServer is not None:
         live_reload_server(port)
     else:
+        print("Using SimpleHTTPServer. Follow the README for livereload if "
+            "desired")
         simple_server(port)
 
 
