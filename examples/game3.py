@@ -62,9 +62,6 @@ def display(board, player_x, player_y, player_inventory):
     Display the given `board` and the player at the position `player_x` and
     `player_y`
     """
-    print('Player inventory:')
-    for item in player_inventory:
-        print(item)
     for y, row in enumerate(board):
         for x, tile in enumerate(row):
             if x == player_x and y == player_y:
@@ -87,6 +84,9 @@ def main():
     player_inventory = []
     while True:
         display(board, player_x, player_y, player_inventory)
+        print('Player inventory:')
+        for item in player_inventory:
+            print(item)
         move = raw_input("Choose a direction (Type `quit` to quit): ")
         if move == 'quit':
             return True
