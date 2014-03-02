@@ -25,6 +25,29 @@
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
+
+.reveal footer{
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    bottom: 3px;
+    left: 0;
+    z-index: 10;
+    font-size: 35%;
+    text-align:right;
+    background-image: url(../css/images/pink-logo.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    font-family:;
+}
+.reveal footer .copyright{
+    margin:15px 5px 0 100px;
+    font-style: italic;
+}
+.reveal footer .copyright a img{
+    vertical-align: middle;
+}
+
 body {
   background: #e9f1da;
   background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #e9f1da 100%);
