@@ -382,6 +382,34 @@ print rect_area
 Note: Draw a diagram with bubbles
 @@@
 
+###Let's Develop It
+
+* Write a program that uses at least one function to solve a geometry problem
+
+* Hint: You might use a loop that obtains user input, does the calculation, then prints the answer. As before, the user should be able to quit by entering "quit"
+* Hint: You can import your function in the shell and call it with different parameters to test it out
+* Hint: Download [geometry.py](/examples/geometry.py) and use it as an example
+
+If you'd like to try something different or in addition, try the next slide...
+
+Note: Let's Develop It 15 Minutes
+@@@
+
+###Let's Develop It
+* Write a program that asks the user to guess a number between a given range, such as 1 to 10
+* The program should give the user hints such as "too high" or "too low". Alternatively, the hints might be "warm" or "cold" depending on how close they are to the number
+* The computer will need to have a random number for the user to guess:
+
+```python
+#At the top of the file
+from random import randint
+
+# Use this line where you need to have a random number.
+# (Hint, this is probably used before the loop for user input)
+random_number = randint(1, 10)
+```
+@@@
+
 ###Import statements
 
 The **import** statement allows us to use Python code that is defined in one file in a different file, or inside of the shell.
@@ -412,31 +440,22 @@ ni()
 @@@
 
 ###Let's Develop It
+* Write a game that displays a board and allows a player to move on the board.
 
-* Write a program that uses at least one function to solve a geometry problem
+* The beginning of this program has been started and is available here as
+[game1.py](/examples/game1.py)
 
-* Hint: You might use a loop that obtains user input, does the calculation, then prints the answer. As before, the user should be able to quit by entering "quit"
-* Hint: You can import your function in the shell and call it with different parameters to test it out
-* Hint: Download [geometry.py](/examples/geometry.py) and use it as an example
+* You'll also need to download the board.txt file to the same folder.
+ [board.txt](/examples/board.txt)
 
-If you'd like to try something different or in addition, try the next slide...
+* If you are stuck ask the teacher or a TA for help.
 
-Note: Let's Develop It 15 Minutes
-@@@
+* If you want additional challenges, download game2 and game3, which ask for
+additional features. (Finish each in order).
+[game2](/examples/game2.py)
+[game3](/examples/game3.py)
 
-###Let's Develop It
-* Write a program that asks the user to guess a number between a given range, such as 1 to 10
-* The program should give the user hints such as "too high" or "too low". Alternatively, the hints might be "warm" or "cold" depending on how close they are to the number
-* The computer will need to have a random number for the user to guess:
-
-```python
-#At the top of the file
-from random import randint
-
-# Use this line where you need to have a random number.
-# (Hint, this is probably used before the loop for user input)
-random_number = randint(1, 10)
-```
+Note: 30 minutes
 @@@
 
 ###Questions?
