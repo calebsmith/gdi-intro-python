@@ -18,8 +18,5 @@ To work on these slides, follow these steps:
 full Python environment, there are various other livereload server
 implementations such as those in Ruby or Node.js)
 * Install the livereload chrome extension.
-* As an alternative, the 'simple_server' python script is provided for a
-basic slide server that doesn't attempt to live reload. This is really only
-necessary if the livereload setup is problematic or too time consuming
-* Run the server.py or simple_server.py server in a terminal and open a browser
-to localhost at the port of the server (defaults to 8000)
+* Run the server.py server in a terminal using `python server.py` and open a
+browser to localhost at the port of the server (defaults to 8000)
