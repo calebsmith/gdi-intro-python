@@ -41,6 +41,7 @@ except ImportError:
 
 DEFAULT_PORT = 8000
 patterns = [
+    '*.html',
     'set*/slides/*.md',
     'set*/*.html',
     'images/',
