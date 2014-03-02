@@ -388,7 +388,7 @@ Note: Draw a diagram with bubbles
 
 * Hint: You might use a loop that obtains user input, does the calculation, then prints the answer. As before, the user should be able to quit by entering "quit"
 * Hint: You can import your function in the shell and call it with different parameters to test it out
-* Hint: Download [geometry.py](/examples/geometry.py) and use it as an example
+* Hint: Download [geometry.py](calebsmith.github.io/gdi-intro-python/examples/geometry.py) and use it as an example
 
 If you'd like to try something different or in addition, try the next slide...
 
@@ -443,17 +443,18 @@ ni()
 * Write a game that displays a board and allows a player to move on the board.
 
 * The beginning of this program has been started and is available here as
-[game1.py](/examples/game1.py)
+[game1.py](calebsmith.github.io/gdi-intro-python/examples/game1.py)
 
 * You'll also need to download the board.txt file to the same folder.
- [board.txt](/examples/board.txt)
+ [board.txt](calebsmith.github.io/gdi-intro-python/examples/board.txt)
 
 * If you are stuck ask the teacher or a TA for help.
 
 * If you want additional challenges, download game2 and game3, which ask for
 additional features. (Finish each in order).
-[game2](/examples/game2.py)
-[game3](/examples/game3.py)
+[game2](calebsmith.github.io/gdi-intro-python/examples/game2.py)
+[game3](calebsmith.github.io/gdi-intro-python/examples/game3.py)
+
 
 Note: 30 minutes
 @@@
