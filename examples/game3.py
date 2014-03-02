@@ -15,7 +15,7 @@ In this stage, the following is already implemented:
 from __future__ import print_function
 
 
-DEFAULT_BOARD = 'board.txt'
+DEFAULT_BOARD = 'board.dat'
 PLAYER_X_START = 5
 PLAYER_Y_START = 5
 

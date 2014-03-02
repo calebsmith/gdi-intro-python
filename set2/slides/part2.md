@@ -445,8 +445,8 @@ ni()
 * The beginning of this program has been started and is available here as
 [game1.py](http://calebsmith.github.io/gdi-intro-python/examples/game1.py)
 
-* You'll also need to download the board.txt file to the same folder.
- [board.txt](http://calebsmith.github.io/gdi-intro-python/examples/board.txt)
+* You'll also need to download the board.dat file to the same folder.
+ [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
 
 * If you are stuck ask the teacher or a TA for help.
 
