@@ -36,6 +36,8 @@ False
 >>> print c
 True
 ```
+
+Note: Block 1 - 25 Minutes
 @@@
 
 ###Boolean Expressions continued
@@ -149,7 +151,7 @@ elif input_value == '2':
     print 'The warg eventually looses interest and wanders off'
 print "Game under construction. Come back later"
 ```
-Note: Let's develop it: 10 minutes
+Note: Let's develop it: 15 minutes
 @@@
 
 ###Iteration
@@ -247,7 +249,7 @@ while True:
 print "The sum is", result
 ```
 
-Note: Let's Develop It - 10 minutes
+Note: Let's Develop It - 15 minutes
 @@@
 
 ###Functions
@@ -268,6 +270,8 @@ We have already made a function call when using the type, int, or float function
 >>> print type(a)
 <type 'float'>
 ```
+
+Note: Block 3 - 40 Minutes
 @@@
 
 ###Function calls
@@ -327,7 +331,7 @@ y = plus_5(4)
 * In this example, the function call `plus_5(4)` evaluates to 9, and y is set to this value</li>
 * To determine what a function will return, use the <strong>substitution method</strong>.</li>
 * If return is not used, the function returns <strong>None</strong></li>
-Note: Demonstrate substitution method
+* Use substitution method
 @@@
 
 ###Functions with no arguments
@@ -445,6 +449,8 @@ ni()
 * The beginning of this program has been started and is available here as
 [game1.py](http://calebsmith.github.io/gdi-intro-python/examples/game1.py)
 
+* More instructions can be found in the game1.py file
+
 * You'll also need to download the board.dat file to the same folder.
  [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
 
@@ -455,7 +461,7 @@ additional features. (Finish each in order).
 [game2](http://calebsmith.github.io/gdi-intro-python/examples/game2.py)
 [game3](http://calebsmith.github.io/gdi-intro-python/examples/game3.py)
 
-Note: 30 minutes
+Note: Let's Develop It 30 minutes
 @@@
 
 ###Questions?
