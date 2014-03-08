@@ -238,7 +238,8 @@ The for loop has three parts:
 @@@
 
 ###Let's Develop It
-* Write a program that takes numbers from user input and adds thems all together.
+* Write a program that takes numbers from user input and adds thems all
+together for a final result.
 * This program should stop taking input, display the answer and exit when the user types "quit".
 * Hint:
 ```python
@@ -246,27 +247,10 @@ result = 0
 while True:
     input_value = raw_input("Enter a number:")
     ... (put more code here) ...
-print "The sum is", result
+print "The final sum is", result
 ```
 
 Note: Let's Develop It - 15 minutes
-@@@
-
-
-###Let's Develop It
-* Write a game that displays a board and allows a player to move on the board.
-
-* The beginning of this program has been started and is available here as
-[game1.py](http://calebsmith.github.io/gdi-intro-python/examples/game1.py)
-
-* More instructions can be found in the game1.py file
-
-* You'll also need to download the board.dat file to the same folder.
- [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
-
-* If you are stuck ask the teacher or a TA for help.
-
-Note: Let's Develop It 25 minutes
 @@@
 
 
@@ -403,33 +387,19 @@ print rect_area
 Note: Draw a diagram with bubbles
 @@@
 
+
 ###Let's Develop It
 
 * Write a program that uses at least one function to solve a geometry problem
 
-* Hint: You might use a loop that obtains user input, does the calculation, then prints the answer. As before, the user should be able to quit by entering "quit"
-* Hint: You can import your function in the shell and call it with different parameters to test it out
+* Hint: You might use a loop that first obtains user input, then does the
+calculation, prints the answer and repeats. As before, the user should be able
+to quit by entering "quit"
 * Hint: Download [geometry.py](http://calebsmith.github.io/gdi-intro-python/examples/geometry.py) and use it as an example
-
-If you'd like to try something different or in addition, try the next slide...
 
 Note: Let's Develop It 15 Minutes
 @@@
 
-###Let's Develop It
-* Write a program that asks the user to guess a number between a given range, such as 1 to 10
-* The program should give the user hints such as "too high" or "too low". Alternatively, the hints might be "warm" or "cold" depending on how close they are to the number
-* The computer will need to have a random number for the user to guess:
-
-```python
-#At the top of the file
-from random import randint
-
-# Use this line where you need to have a random number.
-# (Hint, this is probably used before the loop for user input)
-random_number = randint(1, 10)
-```
-@@@
 
 ###Import statements
 
@@ -462,8 +432,25 @@ ni()
 
 
 ###Let's Develop It
+* Write a game that displays a board and allows a player to move on the board.
+
+* The beginning of this program has been started and is available here as
+[game1.py](http://calebsmith.github.io/gdi-intro-python/examples/game1.py)
+
+* More instructions can be found in the game1.py file
+
+* You'll also need to download the board.dat file to the same folder.
+ [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
+
+* If you are stuck ask the teacher or a TA for help.
+
+Note: Let's Develop It 25 minutes
+@@@
+
+
+###Let's Develop It
 * Improve our adventure game by preventing the player from walking through
-walls and adding other features described in game2.py
+walls
 
 * The beginning of this program has been started and is available here as
 [game2.py](http://calebsmith.github.io/gdi-intro-python/examples/game2.py)
