@@ -392,10 +392,15 @@ Note: Draw a diagram with bubbles
 
 * Write a program that uses at least one function to solve a geometry problem
 
-* Hint: You might use a loop that first obtains user input, then does the
-calculation, prints the answer and repeats. As before, the user should be able
-to quit by entering "quit"
-* Hint: Download [geometry.py](http://calebsmith.github.io/gdi-intro-python/examples/geometry.py) and use it as an example
+* The program will generally have three steps:
+
+    * Obtain input
+    * Call a function to calculate the answer
+    * Display the answer
+
+* Hint: You can take user input with raw_input() as before, or use the example
+below to take arguments from the command line
+* Download [geometry.py](http://calebsmith.github.io/gdi-intro-python/examples/geometry.py) and use it as an example
 
 Note: Let's Develop It 15 Minutes
 @@@

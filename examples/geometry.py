@@ -18,12 +18,6 @@ def absolute_difference(value_a, value_b):
     return abs(value_a - value_b)
 
 
-def find_width_height(x1, y1, x2, y2):
-    width = absolute_difference(x1, x2)
-    height = absolute_difference(y1, y2)
-    return width, height
-
-
 def get_hypotenuse(a, b):
     return sqrt(a ** 2 + b ** 2)
 
@@ -33,7 +27,8 @@ def get_area_rectangle(width, height):
 
 
 def print_area_and_hypotenuse(x1, y1, x2, y2):
-    width, height = find_width_height(x1, y1, x2, y2)
+    width = absolute_difference(x1, x2)
+    height = absolute_difference(y1, y2)
     area = get_area_rectangle(width, height)
     hypotenuse = get_hypotenuse(width, height)
     print 'Area of the rectangle is:'
