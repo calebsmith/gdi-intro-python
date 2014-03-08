@@ -1,7 +1,7 @@
 ![Girl Develop It Logo](../images/gdi_logo_badge.png)
 
 ###Intro to Python
-####Part 2
+####Section 2
 @@@
 
 ###Review
