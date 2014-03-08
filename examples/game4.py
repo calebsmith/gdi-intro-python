@@ -10,11 +10,7 @@ In this stage, the following is already implemented:
     * Displays the player on the board
     * Moves the player on the board when the user types input such as "up"
     * Prevents the player from walking through walls
-
-The following needs to be implemented:
-    * Make it so the player can pick up the item (The item looks like ^)
-    * Once picked up, the board should no longer display the item.
-    * The item should appear in the player's inventory
+    * Makes it so the player can pick up the item (Item looks like ^)
 """
 from __future__ import print_function
 
@@ -83,7 +79,8 @@ def main():
     while True:
         display(board, player_x, player_y, player_inventory)
         print('Player inventory:')
-        # FIXME: Print out the player's inventory here
+        for item in player_inventory:
+            print(item)
         move = raw_input("Choose a direction (Type `quit` to quit): ")
         if move == 'quit':
             return True
@@ -99,8 +96,9 @@ def main():
         if move == 'right':
             if get_tile(board, player_x + 1, player_y) != '*':
                 player_x += 1
-        # FIXME: Check if the user has obtained the item (A ^ on the board)
-        # Remove the item from the board if the user picks it up
+        if get_tile(board, player_x, player_y) == '^' and '^' not in player_inventory:
+            board[player_y][player_x] = ' '
+            player_inventory.append('^')
 
 
 if __name__ == '__main__':

@@ -64,8 +64,6 @@ def display(board, player_x, player_y):
     Display the given `board` and the player at the position `player_x` and
     `player_y`
     """
-    # FIXME: Should not display the item on the board if the user has picked it
-    # up. Should display the user's inventory somewhere
     for y, row in enumerate(board):
         for x, tile in enumerate(row):
             if x == player_x and y == player_y:
@@ -85,7 +83,7 @@ def main():
         if move == 'quit':
             return True
         # FIXME: Make it so the player cannot walk through walls
-        # FIXME: Check if the user has obtained the item (A ^ on the board)
+        # Hint: Call get_tile to determine what is on the board at x, y
         if move == 'up':
             player_y -= 1
         if move == 'down':
