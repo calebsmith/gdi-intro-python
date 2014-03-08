@@ -349,7 +349,6 @@ y = plus_5(4)
 * In this example, the function call `plus_5(4)` evaluates to 9, and y is set to this value</li>
 * To determine what a function will return, use the <strong>substitution method</strong>.</li>
 * If return is not used, the function returns <strong>None</strong></li>
-* Use substitution method
 @@@
 
 ###Functions with no arguments
