@@ -252,6 +252,24 @@ print "The sum is", result
 Note: Let's Develop It - 15 minutes
 @@@
 
+
+###Let's Develop It
+* Write a game that displays a board and allows a player to move on the board.
+
+* The beginning of this program has been started and is available here as
+[game1.py](http://calebsmith.github.io/gdi-intro-python/examples/game1.py)
+
+* More instructions can be found in the game1.py file
+
+* You'll also need to download the board.dat file to the same folder.
+ [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
+
+* If you are stuck ask the teacher or a TA for help.
+
+Note: Let's Develop It 25 minutes
+@@@
+
+
 ###Functions
 
 Also known as "procedures"
@@ -443,23 +461,21 @@ ni()
 ```
 @@@
 
+
 ###Let's Develop It
-* Write a game that displays a board and allows a player to move on the board.
+* Improve our adventure game by preventing the player from walking through
+walls and adding other features described in game2.py
 
 * The beginning of this program has been started and is available here as
-[game1.py](http://calebsmith.github.io/gdi-intro-python/examples/game1.py)
-
-* More instructions can be found in the game1.py file
+[game2.py](http://calebsmith.github.io/gdi-intro-python/examples/game2.py)
 
 * You'll also need to download the board.dat file to the same folder.
  [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
 
 * If you are stuck ask the teacher or a TA for help.
 
-* If you want additional challenges, download game2 and game3, which ask for
-additional features. (Finish each in order).
-[game2](http://calebsmith.github.io/gdi-intro-python/examples/game2.py)
-[game3](http://calebsmith.github.io/gdi-intro-python/examples/game3.py)
+* If you finish early, consider adding a feature of your own or helping your
+ neighbor
 
 Note: Let's Develop It 30 minutes
 @@@
