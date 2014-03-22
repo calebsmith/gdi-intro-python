@@ -32,7 +32,7 @@
     width: 100%;
     bottom: 3px;
     left: 0;
-    z-index: 10;
+    z-index: 0;
     font-size: 35%;
     text-align:right;
     background-image: url(../images/pink-logo.png);
