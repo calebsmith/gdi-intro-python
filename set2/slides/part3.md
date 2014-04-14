@@ -375,6 +375,8 @@ Write a program that opens a text file and does some processing.
 
 * Use the functions from [helpers.py](http://calebsmith.github.io/gdi-intro-python/examples/helpers.py) to help with reading in the lines and/or words of the file
 
+* Download a plain text english dictionary like the following: [english.txt](http://calebsmith.github.io/gdi-intro-python/examples/english.txt) and put it into the same directory as your python file.
+
 * Download a book in plain text from [Project Gutenburg](http://www.gutenberg.org/wiki/Main_Page) and put it into the same directory as your python file.
 
 The next slide has some code and other resources that should help you get started
