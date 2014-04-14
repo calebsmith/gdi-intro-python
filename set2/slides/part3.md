@@ -26,7 +26,7 @@ Note: Block 1 - 25 Minutes
 ###More with Functions
 Funtions can also call other funtions
 
-One an use this to break up tasks into small piece that rely on others to do their work
+One can use this to break up tasks into small piece that rely on others to do their work
 
 ```python
 from math import sqrt
@@ -88,18 +88,17 @@ A **method** is like a function but it is "bound" to an object.
 For example, the integers and strings we've been using have methods attached to them
 
 We can use the dir() function to see the methods of an object and help() to see what they do.
+
 ```python
-a = 4
-print dir(a)
-
-name = 'caleb'
-sentence = 'the quick brown fox did the thing with the thing'
-print dir(name)
-
-print name.capitalize()
-print sentence.count('the')
-
-help(name.upper)
+>>> sentence = 'the quick brown fox did the thing with the other thing'
+>>> print dir(sentence)
+# Lots of output
+>>> print sentence.capitalize()
+'The quick brown fox did the thing with the other thing'
+>>> print sentence.count('the')
+4
+>>> help(sentence.upper)
+# Lots of output
 ```
 @@@
 
@@ -111,15 +110,16 @@ Use 'dir(string_variable)' and the help() function to explore the various method
 
 Hint: Like functions, some methods take arguments and others don't
 
-Hint: Use help() on a method. It will tell you the arguments to use and the expected behavior
+Hint: Use help(varname.methodname) on a method. It will tell you the arguments to use and the expected behavior
 
-Hint: Don't be afraid of errors. They seem to be in a foreign language but they are there to help you. Read them carefully.
+Hint: Don't be afraid of errors. They are there to help you so read them carefully.
+
 ```python
 # Example
 name = 'beth'
 dir(name)
 help(name.capitalize)
-name = name.capitalize()
+cap_name = name.capitalize()
 ```
 
 Note: 5 minutes
@@ -149,10 +149,11 @@ Note: Block 2 - 30 Minutes
 Lists have several methods, the most useful of which is `append`
 A list can be created as an empty list and have values added to it with `append`
 ```python
-to_dos = []
-to_dos.append('buy soy milk')
-to_dos.append('install git')
-print to_dos
+>>> to_dos = []
+>>> to_dos.append('buy soy milk')
+>>> to_dos.append('install git')
+>>> print to_dos
+['buy soy milk', 'install git']
 ```
 
 Therefore, lists are **mutable**
@@ -169,7 +170,6 @@ Once defined, we can iterate on them, performing an action with each element
 
 ```python
 shipping_cost = 2.5
-
 prices = [3, 4, 5.25]
 
 costs = []
@@ -178,6 +178,11 @@ for price in prices:
 
 for cost in costs:
     print cost
+
+# Output
+# 5.5
+# 6.5
+# 7.75
 ```
 @@@
 
@@ -191,8 +196,9 @@ This allows us to obtain an element without iterating through the entire collect
 To index on a collection, follow it immediately with `[index]`. (index here is a number, variable or expression)
 
 ```python
-numbers = [10, 20, 30]
-print numbers[0]
+>>> numbers = [10, 20, 30]
+>>> print numbers[0]
+10
 ```
 @@@
 
@@ -201,18 +207,18 @@ print numbers[0]
 Lists and other collections in Python are <strong>zero indexed</strong>. This means that the number 0 refers to first element in the list.
 
 ```python
-to_dos = [
-    'install git', 'read email', 'make lunch',
-]
-print to_dos[0]
-print to_dos[1]
-
-print to_dos[-1]
+>>> to_dos = ['install git', 'read email', 'make lunch']
+>>> print to_dos[0]
+'install git'
+>>> print to_dos[1]
+'read email'
+>>> print to_dos[-1]
+'make lunch'
 ```
 
 Negative numbers mean "go back from the end this many". e.g. -1 is the last element, -2 is the penultimate
 
-An IndexError results if an index exceeds the length of the list minus 1
+An IndexError results if an index is too high or low for the number of elements
 @@@
 
 
@@ -235,11 +241,11 @@ This dictionary would be indexed with strings such as 'food' and 'beverage' inst
 
 ###Indexing on Dictionaries
 
-Dictionaries aren't literally just for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.
+Dictionaries aren't literally for definitions. They represent a group of mappings. A mapping might be: menu items -> costs.
 
 We can also index on dictionaries.
 
-The most common indexes are strings, but they can be whatever type the keys are.
+The most common indexes are strings, but this is not a hard requirement.
 
 ```python
 menu = {
@@ -247,6 +253,7 @@ menu = {
 }
 
 tofu_cost = menu['tofu']
+# the tofu_cost variable is now equal to 4.
 ```
 
 Indexing on a key that doesn't exist results in a KeyError
@@ -257,7 +264,7 @@ If you aren't certain a key is present, you can use the 'get' method...
 
 ###Dictionary Methods
 
-Some of the most essential methods are 'keys', 'values' and 'items'
+Some of the most essential methods are *keys*, *values* and *items*
 
 ```python
 menu = {
@@ -266,21 +273,25 @@ menu = {
     'baguette': 3,
 }
 
-print menu.keys()
-print menu.values()
-print menu.items()
-print menu.get('pizza')
-print menu.get('water')
-print menu.get('juice', 5)
+>>> print menu.get('pizza')
+8
+>>> print menu.get('donuts', 5)
+5
+>>> print menu.keys()
+['tofu', 'pizza', 'baguette']
+>>> print menu.values()
+[4, 8, 3]
+>>> print menu.items()
+[('tofu', 4), ('pizza', 8), ('baguette', 3)]
 ```
 
-'get' will return None if the key isn't present or a default value if provided.
+If a key isn't present, the get method will return a default value if provided, otherwise None
 @@@
 
 
 ###Tuples
 
-**Tuples** are like lists, but they are **immutable**. They are particularly good at storing collections of a fixed and predictable size. Use '()' to define tuples
+**Tuples** are like lists, but they are **immutable**. They are particularly good at storing collections of a fixed and predictable size. Use `()` to define tuples
 
 An x, y coordinate pair, or the RGB values of a color are good candidates for tuples.
 
@@ -293,6 +304,7 @@ y = point_a[1]
 
 point = (0, 1)
 x, y = point_a
+# x is 0, y is 1
 ```
 @@@
 
@@ -319,15 +331,16 @@ N.B. - In the example, the function returns a tuple. In the context of a return,
 
 Sets can be created with comma separated elements enclosed in '{}' in Python 2.7 or greater. Very often, one will make a list and use the set() function
 
+Sets have an *add* method, which like append for lists, adds an element to a set.
+
 ```python
-set_a = set([0, 3, 7])
-set_b = set([0, 4, 7])
-
-# .add() is like .append() but for sets
-print set_a.add(4)
-
-# or in 2.7
-set_a = {0, 3, 7} # and so on
+>>> set_a = set([0, 3, 7])
+>>> set_b = set([0, 4, 7])
+>>> set_a.add(4)
+>>> print(set_a)
+set([0, 3, 4, 7])
+>>> print(set_a.intersection(set_b))
+set([0, 4, 7])
 ```
 
 Sets have nice methods for reasoning about their relationship to other sets. (Think Venn Diagram)
@@ -341,15 +354,13 @@ The `in` operator is used to determine if an element is in a given collection
 For dictionaries, the keys are searched for the element.
 
 ```python
-color = (255, 255, 0)
-if 0 in color:
-    print '0 is in the color'
+>>> color = (255, 255, 0)
+>>> print(1 in color)
+False
 
-menu = {'tofu': 4}
-print 'tofu' in menu
-
-names = ['Mary', 'Martha', 'George']
-george_present = 'George' in names
+>>> menu = {'tofu': 4}
+>>> print('tofu' in menu)
+True
 ```
 @@@
 
@@ -401,17 +412,20 @@ Such a structure is said to be  <strong>nested</strong>
 
 The following is a list of lists:
 
+This can be indexed successively.
+
 ```python
 game_board = [
     ['O', 'X', ' '],
     [' ', 'X', ' '],
     [' ', ' ', ' '],
 ]
+
+print(game_board[0][1])
+# outputs: 'X'
 ```
-This can be indexed successively with <code>game_board[0][1]</code>
 
 Note:  Block 3 20 minutes
-
 @@@
 
 
@@ -427,15 +441,15 @@ all_to_dos = []
 all_to_dos.append(mary_to_dos)
 all_to_dos.append(fran_to_dos)
 all_to_dos.append(baby_to_dos)
-print all_to_dos
+print(all_to_dos)
+
 for to_dos in all_to_dos:
     for to_do in to_dos:
-        print to_do
+        print(to_do)
 ```
-What if we want to <strong>flatten</strong> the to do's?
+If we want to <strong>flatten</strong> the to do's into one list, use **extend**
 
 What if we want the to do's to be unique?
-
 @@@
 
 
@@ -453,9 +467,10 @@ card_b = {
     'number': 8,
 }
 hand = [card_a, card_b]
-print 'The hand contains:'
+
+print('The hand contains:')
 for card in hand:
-    print 'A', card['number'], 'of', card['suit']
+    print('A', card['number'], 'of', card['suit'])
 ```
 @@@
 
@@ -476,10 +491,11 @@ all_to_dos = {
     'baby': baby_to_dos,
 }
 for name, to_dos in all_to_dos.items():
-    print name, 'needs to: ', to_dos
+    print(name, 'needs to: ', to_dos)
 # Changing this later can be accomplished with
 all_to_dos['baby'].append('cry')
 ```
+
 Now the to do lists can be indexed or modified by name
 
 @@@
@@ -502,6 +518,7 @@ all_tweets = [
         'tweets': [
             'at Loco Pops enjoying a Raspberry Sage popsicle',
             'Learning Python is so much fun',
+            'Running late to Code and Coffee. #overslept',
         ],
     },
 ]
@@ -538,39 +555,53 @@ Python provides several functions that help us work with these collections.
 @@@
 
 
-###Examples of using Builtins
+###Some Builtins
 
 ```python
 # Using len() - Determines length
-print len([1, 2])
+>>> print(len([1, 2]))
+2
 # range() - Quickly creates a list of integers
-print range(5)
-print range(5, 10)
-print range(0, 10, 2)
-print range(9, -1, -1)
+>>> print(range(5))
+[0, 1, 2, 3, 4]
+>>> print(range(5, 10))
+[5, 6, 7, 8, 9]
+>>> print(range(0, 10, 2))
+[0, 2, 4, 6, 8]
+>>> print(range(9, 4, -1))
+[9, 8, 7, 6, 5]
 # sorted() - Sort a given list
-grades = [93, 100, 60]
-grades = sorted(grades)
-print grades
+>>> grades = sorted([93, 100, 60])
+>>> print(grades)
+[60, 93, 100]
 ```
-@@@
 
+@@@
 
 ###Builtins Examples continued
 
 ```python
-# enumerate() - Obtain the index of the element in the loop
-print 'To Do:'
-to_dos = ['work', 'sleep', 'work']
-for index, item in enumerate(to_dos):
-    print '{0}. {1}'.format(index + 1, item)
-print list(enumerate(to_dos))
+# enumerate() - Obtain the index and each element in a collection
+>>> to_dos = ['work', 'sleep', 'work']
+>>> print(list(enumerate(to_dos))
+[(0, 'work'), (1, 'sleep'), (2, 'work')]
+>>> for index, item in enumerate(to_dos):
+...     print(index, item)
+(0, 'work')
+(1, 'sleep')
+(2, 'work')
 # zip()
-widths = [10, 15, 20]
-heights = [5, 8, 12]
-for width, height in zip(widths, heights):
-    print 'Area is {0}'.format(width * height)
+>>> widths = [10, 15, 20]
+>>> heights = [5, 8, 12]
+>>> print(zip(widths, heights))
+[(10, 5), (15, 8), (20, 12)]
+>>> for width, height in zip(widths, heights):
+...     print('Area is ', width * height)
+('Area is ', 50)
+('Area is ', 120)
+('Area is ', 240)
 ```
+
 Note:  Let's develop it: 25 minutes
 @@@
 
