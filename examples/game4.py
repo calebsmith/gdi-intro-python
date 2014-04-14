@@ -11,6 +11,9 @@ In this stage, the following is already implemented:
     * Moves the player on the board when the user types input such as "up"
     * Prevents the player from walking through walls
     * Makes it so the player can pick up the item (Item looks like ^)
+
+Implement the following:
+    * Make it so the player can use the key to open the door.
 """
 from __future__ import print_function
 
@@ -19,10 +22,21 @@ DEFAULT_BOARD = 'board.dat'
 PLAYER_X_START = 5
 PLAYER_Y_START = 5
 
+NON_SOLIDS = ['^', '$', 'o', ' ']
+
 
 def print_char(char):
     """Print only the given `char` without a newline"""
     print(char, end='')
+
+
+def get_input():
+    try:
+        move = raw_input("Choose a direction (Type `quit` to quit): ")
+    except NameError:
+        # Python3
+        move = input("Choose a direction (Type `quit` to quit): ")
+    return move
 
 
 def load_board(filename):
@@ -81,20 +95,24 @@ def main():
         print('Player inventory:')
         for item in player_inventory:
             print(item)
-        move = raw_input("Choose a direction (Type `quit` to quit): ")
+        move = get_input()
         if move == 'quit':
             return True
         if move == 'up':
-            if get_tile(board, player_x, player_y - 1) != '*':
+            # FIXME: Add a check that allows the player to pass through a door
+            # if they have a key.
+            if get_tile(board, player_x, player_y - 1) in NON_SOLIDS:
                 player_y -= 1
         if move == 'down':
-            if get_tile(board, player_x, player_y + 1) != '*':
+            # FIXME: Add a check that allows the player to pass through a door
+            # if they have a key.
+            if get_tile(board, player_x, player_y + 1) in NON_SOLIDS:
                 player_y += 1
         if move == 'left':
-            if get_tile(board, player_x - 1, player_y) != '*':
+            if get_tile(board, player_x - 1, player_y) in NON_SOLIDS:
                 player_x -= 1
         if move == 'right':
-            if get_tile(board, player_x + 1, player_y) != '*':
+            if get_tile(board, player_x + 1, player_y) in NON_SOLIDS:
                 player_x += 1
         if get_tile(board, player_x, player_y) == '^' and '^' not in player_inventory:
             board[player_y][player_x] = ' '

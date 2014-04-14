@@ -26,6 +26,15 @@ def print_char(char):
     print(char, end='')
 
 
+def get_input():
+    try:
+        move = raw_input("Choose a direction (Type `quit` to quit): ")
+    except NameError:
+        # Python3
+        move = input("Choose a direction (Type `quit` to quit): ")
+    return move
+
+
 def load_board(filename):
     """
     Given a filename of a text file, load the characters therein and return as
@@ -79,7 +88,7 @@ def main():
         # Display the board and player
         display(board, player_x, player_y)
         # Obtain and handle user input
-        move = raw_input("Choose a direction (Type `quit` to quit): ")
+        move = get_input()
         # FIXME: Insert code here to handle the 'move' the player has made.
         # (Hint: should manipulate player_x and player_y)
         if move == 'quit':

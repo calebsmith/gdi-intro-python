@@ -27,6 +27,15 @@ def print_char(char):
     print(char, end='')
 
 
+def get_input():
+    try:
+        move = raw_input("Choose a direction (Type `quit` to quit): ")
+    except NameError:
+        # Python3
+        move = input("Choose a direction (Type `quit` to quit): ")
+    return move
+
+
 def load_board(filename):
     """
     Given a filename of a text file, load the characters therein and return as
@@ -79,7 +88,7 @@ def main():
     player_y = PLAYER_Y_START
     while True:
         display(board, player_x, player_y)
-        move = raw_input("Choose a direction (Type `quit` to quit): ")
+        move = get_input()
         if move == 'quit':
             return True
         # FIXME: Make it so the player cannot walk through walls

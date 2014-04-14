@@ -10,11 +10,10 @@ In this stage, the following is already implemented:
     * Displays the player on the board
     * Moves the player on the board when the user types input such as "up"
     * Prevents the player from walking through walls
+    * Makes it so the player can pick up the item (Item looks like ^)
 
-The following needs to be implemented:
-    * Make it so the player can pick up the item (The item looks like ^)
-    * Once picked up, the board should no longer display the item.
-    * The item should appear in the player's inventory
+Implement the following:
+    * Make it so the player can use the key to open the door.
 """
 from __future__ import print_function
 
@@ -94,24 +93,34 @@ def main():
     while True:
         display(board, player_x, player_y, player_inventory)
         print('Player inventory:')
-        # FIXME: Print out the player's inventory here
+        for item in player_inventory:
+            print(item)
         move = get_input()
         if move == 'quit':
             return True
         if move == 'up':
-            if get_tile(board, player_x, player_y - 1) in NON_SOLIDS:
+            next_tile = get_tile(board, player_x, player_y - 1)
+            if next_tile in NON_SOLIDS or '^' in player_inventory:
                 player_y -= 1
         if move == 'down':
-            if get_tile(board, player_x, player_y + 1) in NON_SOLIDS:
+            next_tile = get_tile(board, player_x, player_y + 1)
+            if next_tile in NON_SOLIDS or '^' in player_inventory:
                 player_y += 1
         if move == 'left':
-            if get_tile(board, player_x - 1, player_y) in NON_SOLIDS:
+            next_tile = get_tile(board, player_x - 1, player_y)
+            if next_tile in NON_SOLIDS or '^' in player_inventory:
                 player_x -= 1
         if move == 'right':
-            if get_tile(board, player_x + 1, player_y) in NON_SOLIDS:
+            next_tile = get_tile(board, player_x + 1, player_y)
+            if next_tile in NON_SOLIDS or '^' in player_inventory:
                 player_x += 1
-        # FIXME: Check if the user has obtained the item (A ^ on the board)
-        # Remove the item from the board if the user picks it up
+        current_tile = get_tile(board, player_x, player_y)
+        if current_tile == '^' and '^' not in player_inventory:
+            board[player_y][player_x] = ' '
+            player_inventory.append('^')
+        if current_tile == '-' and '^' in player_inventory:
+            board[player_y][player_x] = ' '
+            player_inventory.remove('^')
 
 
 if __name__ == '__main__':
