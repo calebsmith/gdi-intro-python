@@ -329,7 +329,7 @@ N.B. - In the example, the function returns a tuple. In the context of a return,
 ###Sets
 **Sets** are unordered collections whose elements are unique. Therefore, adding a value to a set that already has it, does nothing.
 
-Sets can be created with comma separated elements enclosed in '{}' in Python 2.7 or greater. Very often, one will make a list and use the set() function
+Sets can be created with comma separated elements enclosed in `{}` in Python 2.7 or greater. Very often, one will make a list and use the set() function
 
 Sets have an *add* method, which like append for lists, adds an element to a set.
 
