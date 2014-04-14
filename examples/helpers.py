@@ -70,4 +70,3 @@ def get_words_list(filename):
 def get_english_words():
     """Returns the set of English words in lower-case"""
     return set(word.strip().lower() for word in file_reader('english.txt'))
-
