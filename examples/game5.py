@@ -98,22 +98,22 @@ def main():
         move = get_input()
         if move == 'quit':
             return True
-        if move == 'up':
-            next_tile = get_tile(board, player_x, player_y - 1)
-            if next_tile in NON_SOLIDS or '^' in player_inventory:
-                player_y -= 1
-        if move == 'down':
-            next_tile = get_tile(board, player_x, player_y + 1)
-            if next_tile in NON_SOLIDS or '^' in player_inventory:
-                player_y += 1
-        if move == 'left':
-            next_tile = get_tile(board, player_x - 1, player_y)
-            if next_tile in NON_SOLIDS or '^' in player_inventory:
-                player_x -= 1
-        if move == 'right':
-            next_tile = get_tile(board, player_x + 1, player_y)
-            if next_tile in NON_SOLIDS or '^' in player_inventory:
-                player_x += 1
+        elif move == 'up':
+            next_x = player_x
+            next_y = player_y - 1
+        elif move == 'down':
+            next_x = player_x
+            next_y = player_y + 1
+        elif move == 'left':
+            next_x = player_x - 1
+            next_y = player_y
+        elif move == 'right':
+            next_x = player_x + 1
+            next_y = player_y
+        next_tile = get_tile(board, next_x, next_y)
+        if next_tile in NON_SOLIDS or '^' in player_inventory and next_tile == '-':
+            player_x = next_x
+            player_y = next_y
         current_tile = get_tile(board, player_x, player_y)
         if current_tile == '^' and '^' not in player_inventory:
             board[player_y][player_x] = ' '
