@@ -96,6 +96,7 @@ def main():
         for item in player_inventory:
             print(item)
         move = get_input()
+        next_x, next_y = player_x, player_y
         if move == 'quit':
             return True
         elif move == 'up':

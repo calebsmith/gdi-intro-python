@@ -21,20 +21,20 @@ import sys
 from helpers import get_english_words, generate_words
 
 
-DEFAULT_BOOK = 'pride.txt' 
+DEFAULT_BOOK = 'pride.txt'
 
 
 def main(filename):
     try:
         words_set = set(generate_words(filename))
     except IOError:
-        print 'File {0} not found'.format(filename)
+        print('File {0} not found'.format(filename))
         return
     english_words = get_english_words()
     not_in_english = words_set.difference(english_words)
-    print 'Words in {0} that are not in the dictionary:'.format(filename)
+    print('Words in {0} that are not in the dictionary:'.format(filename))
     for word in sorted(list(not_in_english)):
-        print word
+        print(word)
 
 
 if __name__ == '__main__':
@@ -43,10 +43,9 @@ if __name__ == '__main__':
         arg = sys.argv[1]
         if arg == '-h' or arg == '--help':
             help_flag = True
-            print __doc__
+            print(__doc__)
         filename = sys.argv[1]
     else:
         filename = DEFAULT_BOOK
     if not help_flag:
         main(filename)
-

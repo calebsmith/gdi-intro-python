@@ -9,7 +9,7 @@ and composition
 from __future__ import print_function
 
 
-class Mobile(object): 
+class Mobile(object):
     """
     An object with an x, y position, and methods for moving
     """
@@ -127,4 +127,3 @@ class Grid(object):
 
     def __repr__(self):
         return "<Grid with upper bounds (" + str(self.x_limit) + "," + str(self.y_limit) + ")>"
-

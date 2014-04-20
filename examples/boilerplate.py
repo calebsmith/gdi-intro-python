@@ -28,8 +28,8 @@ def example_func(x):
 
 def main():
     value = example_func(5)
-    print 'I am a placeholder for a program'
-    print 'Surely, 5 + 5 is', value
+    print('I am a placeholder for a program')
+    print('Surely, 5 + 5 is', value)
     # call other functions and do meaningful work from here
 
 

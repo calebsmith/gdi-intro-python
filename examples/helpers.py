@@ -14,6 +14,12 @@ authoritative, just a useful example to work with.
 """
 
 import string
+import sys
+
+if sys.version_info >= (3, 0):
+    PY3 = True
+else:
+    PY3 = False
 
 # Punctuation characters other than hyphen and apostrophe
 PUNCTUATION_CHARS = string.punctuation.replace('-', '').replace("'", '')
@@ -33,7 +39,10 @@ def remove_punctuation(line):
     Given a string, remove punctuation characters other than - or ' and return
     the resulting string
     """
-    return line.translate(string.maketrans('', ''), PUNCTUATION_CHARS)
+    if PY3:
+        return line.translate(str.maketrans('', '', PUNCTUATION_CHARS))
+    else:
+        return line.translate(string.maketrans('', ''), PUNCTUATION_CHARS)
 
 
 def generate_cleaned_lines(filename):
