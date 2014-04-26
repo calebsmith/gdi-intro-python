@@ -110,7 +110,7 @@ def main():
         if move == 'right':
             if get_tile(board, player_x + 1, player_y) in NON_SOLIDS:
                 player_x += 1
-        # FIXME: Check if the user has obtained the item (A ^ on the board)
+        # FIXME: Check if the user has obtained an item (A ^ or * on the board)
         # Remove the item from the board if the user picks it up
 
 

@@ -109,39 +109,24 @@ character.injure(10)
 @@@
 
 ###Let's Develop It
+* Complete our game by allowing you to pick up a sword, battle a dragon and
+ obtain the treasure. If the player has no sword, the dragon wins, otherwise
+ the player wins. When the player obtains the gold, they have beaten the game
 
-* In your text editor, create your own class with an __init__ method, and at least one other method.
+* The beginning of this program has been started and is available here as
+[game6.py](http://calebsmith.github.io/gdi-intro-python/examples/game6.py)
 
-* Open a Python shell and import the class. Create one or more objects from the class
+* You'll also need to download the board.dat file to the same folder.
+ [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
 
-* If time allows, create a function that creates objects from your class, calls a method, and prints one of its attributes
+* If you are stuck ask the teacher or a TA for help.
 
-* Use the next slide as an example
+* The finished game will look something like this:
+[game7.py](http://calebsmith.github.io/gdi-intro-python/examples/game7.py)
 
-Note:  Let's develop it: 10 minutes
-@@@
+* If you have extra time, consider making the player into a class as well
 
-```python
-# in character.py
-class Character():
-
-    def __init__(self, x, y, health):
-        self.x = x
-        self.y = y
-        self.health = health
-
-    def heal(self, amount):
-        self.health = self.health + amount
-        if self.health > 100:
-            self.health = 100
-```
-```python
-# in Python shell
-from character import Character
-character_a = Character(10, 20, 100)
-character_a.injure(10)
-print "character health is: " + character_a.health
-```
+Note: Let's Develop It 30 minutes
 @@@
 
 ###Inheritance
@@ -239,14 +224,6 @@ grid.add_mobile(0, 1)
 grid.add_mobile(0, 1)
 grid.display_grid()
 ```
-@@@
-
-###Let's Develop It
-Create a class that uses inheritance, composition, or both.
-
-To help you, use your work from the last exercise or the classes from [mobile.py](http://calebsmith.github.io/gdi-intro-python/examples/mobile.py)
-
-Note:  Block 3 - Functional Programming - 20 Minutes
 @@@
 
 ###Future Resources

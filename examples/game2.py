@@ -12,7 +12,6 @@ In this stage, the following is already implemented:
 
 The following needs to be implemented:
     * Prevent the player from walking through walls
-    * Make it so the player can pick up the item (The item looks like ^)
 """
 from __future__ import print_function
 

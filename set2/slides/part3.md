@@ -289,6 +289,37 @@ menu = {
 If a key isn't present, the get method will return a default value if provided, otherwise None
 @@@
 
+###The in operator
+
+The `in` operator is used to determine if an element is in a given collection
+
+For dictionaries, the keys are searched for the element.
+
+```python
+>>> color = (255, 255, 0)
+>>> print(1 in color)
+False
+
+>>> menu = {'tofu': 4}
+>>> print('tofu' in menu)
+True
+```
+@@@
+
+###Let's Develop It
+* Improve our adventure game by adding a player inventory. The player should
+ gain items they walk on them and they should be removed from the board.
+
+* The beginning of this program has been started and is available here as
+[game3.py](http://calebsmith.github.io/gdi-intro-python/examples/game3.py)
+
+* You'll also need to download the board.dat file to the same folder.
+ [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
+
+* If you are stuck ask the teacher or a TA for help.
+
+Note: Let's Develop It 30 minutes
+@@@
 
 ###Tuples
 
@@ -327,24 +358,6 @@ set([0, 4, 7])
 ```
 
 Sets have nice methods for reasoning about their relationship to other sets. (Think Venn Diagram)
-@@@
-
-
-###The in operator
-
-The `in` operator is used to determine if an element is in a given collection
-
-For dictionaries, the keys are searched for the element.
-
-```python
->>> color = (255, 255, 0)
->>> print(1 in color)
-False
-
->>> menu = {'tofu': 4}
->>> print('tofu' in menu)
-True
-```
 @@@
 
 ###Lists of ... Lists
@@ -468,6 +481,20 @@ all_tweets = [
 ```
 @@@
 
+###Let's Develop It
+* Improve our adventure game by allowing a player with a key to pass through a
+ door
+
+* The beginning of this program has been started and is available here as
+[game4.py](http://calebsmith.github.io/gdi-intro-python/examples/game4.py)
+
+* You'll also need to download the board.dat file to the same folder.
+ [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
+
+* If you are stuck ask the teacher or a TA for help.
+
+Note: Let's Develop It 30 minutes
+@@@
 
 ###Builtins for collections
 
@@ -548,42 +575,20 @@ Python provides several functions that help us work with these collections.
 Note:  Let's develop it: 25 minutes
 @@@
 
-
 ###Let's Develop It
+* Complete our game by allowing you to pick up a sword, battle a dragon and
+ obtain the treasure. If the player has no sword, the dragon wins, otherwise
+ the player wins. When the player obtains the gold, they have beaten the game
 
-Write a program that expands on your previous one. If it is unfinished, feel free to finish the original exercise first. To expand on it, choose one of the following:
+* The beginning of this program has been started and is available here as
+[game5.py](http://calebsmith.github.io/gdi-intro-python/examples/game5.py)
 
-* Determine how many times the user provided word appears in the file and/or what lines it appears on
+* You'll also need to download the board.dat file to the same folder.
+ [board.dat](http://calebsmith.github.io/gdi-intro-python/examples/board.dat)
 
-* Change the program so that it counts the number of times each word occurs. E.g. A dictionary of all words in the file, whose values are a count of their occurrences
+* If you are stuck ask the teacher or a TA for help.
 
-* Use [boilerplate.py](http://calebsmith.github.io/gdi-intro-python/examples/boilerplate.py) to help you improve the reusability of the program. (The comments in that file should explain the how and why
-
-Resources for this and the previous exercise are provided on the next slide for convenience
-
-@@@
-
-
-###Resources
-
-* Helper functions are in [helpers.py](http://calebsmith.github.io/gdi-intro-python/examples/helpers.py)
-
-* Download a book in plain text from [Project Gutenburg](http://www.gutenberg.org/wiki/Main_Page) and put it into the same directory as your python file.
-
-* You can use this link for [Pride and Prejudice](http://calebsmith.github.io/gdi-intro-python/examples/pride.txt). Click this link and copy/paste the text into a new text file called 'pride.txt' and save it in the same folder as your code
-
-```python
-from helpers import generate_cleaned_lines
-
-def is_word_in_file(word, filename):
-    for line in generate_cleaned_lines(filename):
-        # line will be a string of each line of the file in order
-        # Your code goes here. Do something with the word and line variables
-    return result
-input_word = raw_input("Enter a word to search for:")
-answer = is_word_in_file(input_word, 'pride.txt')
-# Display the answer in some meaningful way
-```
+Note: Let's Develop It 30 minutes
 @@@
 
 ###Questions?
