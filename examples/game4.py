@@ -22,7 +22,7 @@ DEFAULT_BOARD = 'board.dat'
 PLAYER_X_START = 5
 PLAYER_Y_START = 5
 
-NON_SOLIDS = ['^', '$', 'o', ' ']
+NON_SOLIDS = ['^', '$', 'o', ' ', 'f']
 
 
 def print_char(char):
@@ -114,9 +114,10 @@ def main():
         if move == 'right':
             if get_tile(board, player_x + 1, player_y) in NON_SOLIDS:
                 player_x += 1
-        if get_tile(board, player_x, player_y) == '^' and '^' not in player_inventory:
+        current_tile = get_tile(board, player_x, player_y)
+        if current_tile in ['^', 'f'] and current_tile not in player_inventory:
             board[player_y][player_x] = ' '
-            player_inventory.append('^')
+            player_inventory.append(current_tile)
 
 
 if __name__ == '__main__':

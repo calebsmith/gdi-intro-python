@@ -10,11 +10,14 @@ In this stage, the following is already implemented:
     * Displays the player on the board
     * Moves the player on the board when the user types input such as "up"
     * Prevents the player from walking through walls
+    * Makes it so the player can pick up the item (Item looks like ^)
+    * Makes it so the player can use the key to open the door.
+    * Makes it so the dragon (looks like $) kills you unless you have a sword
+    * If you have a sword (looks like f) you beat the dragon
+    * If you are on the treasure (looks like o) you win
 
-The following needs to be implemented:
-    * Make it so the player can pick up the items (The items look like ^ and f)
-    * Once picked up, the board should no longer display the items.
-    * The items should appear in the player's inventory
+To implement:
+    * Make a Board class to improve the load, get_tile related code
 """
 from __future__ import print_function
 
@@ -94,24 +97,44 @@ def main():
     while True:
         display(board, player_x, player_y, player_inventory)
         print('Player inventory:')
-        # FIXME: Print out the player's inventory here
+        for item in player_inventory:
+            print(item)
         move = get_input()
+        next_x, next_y = player_x, player_y
         if move == 'quit':
-            return True
-        if move == 'up':
-            if get_tile(board, player_x, player_y - 1) in NON_SOLIDS:
-                player_y -= 1
-        if move == 'down':
-            if get_tile(board, player_x, player_y + 1) in NON_SOLIDS:
-                player_y += 1
-        if move == 'left':
-            if get_tile(board, player_x - 1, player_y) in NON_SOLIDS:
-                player_x -= 1
-        if move == 'right':
-            if get_tile(board, player_x + 1, player_y) in NON_SOLIDS:
-                player_x += 1
-        # FIXME: Check if the user has obtained the item (A ^ on the board)
-        # Remove the item from the board if the user picks it up
+            return
+        elif move == 'up':
+            next_x = player_x
+            next_y = player_y - 1
+        elif move == 'down':
+            next_x = player_x
+            next_y = player_y + 1
+        elif move == 'left':
+            next_x = player_x - 1
+            next_y = player_y
+        elif move == 'right':
+            next_x = player_x + 1
+            next_y = player_y
+        next_tile = get_tile(board, next_x, next_y)
+        if next_tile in NON_SOLIDS or '^' in player_inventory and next_tile == '-':
+            player_x = next_x
+            player_y = next_y
+        current_tile = get_tile(board, player_x, player_y)
+        if current_tile in ['^', 'f'] and current_tile not in player_inventory:
+            board[player_y][player_x] = ' '
+            player_inventory.append(current_tile)
+        if current_tile == '-' and '^' in player_inventory:
+            board[player_y][player_x] = ' '
+            player_inventory.remove('^')
+        if current_tile == '$':
+            board[player_y][player_x] = ' '
+            if 'f' not in player_inventory:
+                print("You are defenseless and the dragon defeats you")
+                return
+                print("You defeat the dragon with your sword")
+        if current_tile == 'o':
+            print("You obtain the sweet sweet treasures. YOU WIN!")
+            return
 
 
 if __name__ == '__main__':
