@@ -309,24 +309,6 @@ x, y = point_a
 ```
 @@@
 
-###Tuple Example
-
-Remember the geometry functions earlier? Some of these can be simplified using tuples
-
-```python
-def find_width_height(point_a, point_b):
-    x_a, y_a = point_a
-    x_b, y_b = point_b
-    return abs(x_a - x_b), abs(y_a - y_b)
-
-point_a = (5, 0)
-point_b = (10, 4)
-dimensions = find_width_height(point_a, point_b)
-```
-
-N.B. - In the example, the function returns a tuple. In the context of a return, or an assignment, the parenthesis around a tuple are not strictly required
-@@@
-
 ###Sets
 **Sets** are unordered collections whose elements are unique. Therefore, adding a value to a set that already has it, does nothing.
 
