@@ -355,11 +355,12 @@ This is useful when the function does some work but doesn't need any parameters.
 A function can also take more than one argument separated by commas. For example:
 
 ```python
-def find_rectangle_area(width, height):
-    return width * height
+def get_birthday_greeting(name, age):
+    return "Happy birthday to " + name + " who just turned " + str(age) + "!"
 
-area = find_rectangle_area(3, 4)
-# area is set to the value 12
+greeting = get_birthday_greeting("Virginia", 16)
+print greeting
+# Happy birthday to Virginia who just turned 16!
 ```
 @@@
 
@@ -370,39 +371,21 @@ The **scope** of a variable is the area of code in which a variable is still val
 Variables defined within a function can not be used elsewhere.
 
 ```python
-def get_triangle_area(base, height):
-    rect_area = base * height
-    return rect_area / 2.0
+def get_average(a, b):
+    total = a + b
+    return total / 2.0
 
-triangle_area = get_triangle_area(10, 20)
+avg = get_average(10, 20)
 
-print triangle_area
-# 100
-print height
+print avg
+# 15
+print a
 # NameError
-print rect_area
+print total
 # NameError
 ```
 
 Note: Draw a diagram with bubbles
-@@@
-
-
-###Let's Develop It
-
-* Write a program that uses at least one function to solve a geometry problem
-
-* The program will generally have three steps:
-
-    * Obtain input
-    * Call a function to calculate the answer
-    * Display the answer
-
-* Hint: You can take user input with raw_input() as before, or use the example
-below to take arguments from the command line
-* Download [geometry.py](http://calebsmith.github.io/gdi-intro-python/examples/geometry.py) and use it as an example
-
-Note: Let's Develop It 15 Minutes
 @@@
 
 
