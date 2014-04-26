@@ -50,25 +50,33 @@ def print_receipt(subtotal):
 @@@
 
 ###Function Composition
-**Function composition** is when the output of one funtion ats as the input of another
+**Function composition** is when the output of one funtion serves as the input of another
 
 ```python
-from math import sqrt
+def increase(x):
+    return x + 1
 
-def find_width_height(x1, y1, x2, y2):
-    return abs(x1 - x2), abs(y1 - y2)
+def decrease(x):
+    return x - 1
 
-def get_hypotenuse(a, b):
-    return sqrt(a ** 2 + b ** 2)
+def double(x):
+    return 2 * x
 
-def print_hypotenuse(x1, y1, x2, y2):
-    print 'The diagonal of the rectangle is:'
-    print get_hypotenuse(find_width_height(x1, y1, x2, y2))
+print double(increase(5))
+# 12
 
-# f(g(x))
-# is the same as:
-#     y = g(x)
-#     f(y)
+# This is the same as...
+x = 5
+y = increase(x)
+print double(y)
+# 12
+
+print double(decrease(5))
+# 8
+print increase(decrease(5))
+# 5
+print double(double(5)):
+# 20
 ```
 
 @@@
