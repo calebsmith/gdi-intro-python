@@ -24,58 +24,59 @@ Note: Block 1 - 25 Minutes
 @@@
 
 ###More with Functions
-Funtions can also call other funtions
+Functions can also call other functions
 
 One can use this to break up tasks into small piece that rely on others to do their work
 
 ```python
-from math import sqrt
+def get_tip(bill_amount):
+    return bill_amount * 0.20  # 20% tip for good service
 
-def absolute_difference(value_a, value_b):
-    return abs(value_a - value_b)
+def get_tax(subtotal):
+    return subtotal * 0.0675  # 6.75% in Orange County, NC
 
-def find_width_height(x1, y1, x2, y2):
-    width = absolute_difference(x1, x2)
-    height = absolute_difference(y1, y2)
-    return width, height
+def print_receipt(subtotal):
+    tax = get_tax(subtotal)
+    bill_amount = subtotal + tax
+    tip = get_tip(bill_amount)
+    total = bill_amount + tip
 
-def get_hypotenuse(a, b):
-    return sqrt(a ** 2 + b ** 2)
-
-def get_area_rectangle(width, height):
-    return width * height
-
-def print_area_and_hypotenuse(x1, y1, x2, y2):
-    width, height = find_width_height(x1, y1, x2, y2)
-    area = get_area_rectangle(width, height)
-    hypotenuse = get_hypotenuse(width, height)
-    print 'Area of the rectangle is:'
-    print area
-    print 'The diagonal of the rectangle is:'
-    print hypotenuse
+    print "Subtotal: $" + str(subtotal)
+    print "Tax at " + str(orange_county_tax_rate * 100) + "%: $" + str(tax)
+    print "Tip at " + str(tip_for_good_service * 100) + "%: $" + str(tip)
+    print "Grand Total: $" + str(total)
 ```
+
 @@@
 
 ###Function Composition
-**Function composition** is when the output of one funtion ats as the input of another
+**Function composition** is when the output of one funtion serves as the input of another
 
 ```python
-from math import sqrt
+def increase(x):
+    return x + 1
 
-def find_width_height(x1, y1, x2, y2):
-    return abs(x1 - x2), abs(y1 - y2)
+def decrease(x):
+    return x - 1
 
-def get_hypotenuse(a, b):
-    return sqrt(a ** 2 + b ** 2)
+def double(x):
+    return 2 * x
 
-def print_hypotenuse(x1, y1, x2, y2):
-    print 'The diagonal of the rectangle is:'
-    print get_hypotenuse(find_width_height(x1, y1, x2, y2))
+print double(increase(5))
+# 12
 
-# f(g(x))
-# is the same as:
-#     y = g(x)
-#     f(y)
+# This is the same as...
+x = 5
+y = increase(x)
+print double(y)
+# 12
+
+print double(decrease(5))
+# 8
+print increase(decrease(5))
+# 5
+print double(double(5)):
+# 20
 ```
 
 @@@
@@ -306,24 +307,6 @@ point = (0, 1)
 x, y = point_a
 # x is 0, y is 1
 ```
-@@@
-
-###Tuple Example
-
-Remember the geometry functions earlier? Some of these can be simplified using tuples
-
-```python
-def find_width_height(point_a, point_b):
-    x_a, y_a = point_a
-    x_b, y_b = point_b
-    return abs(x_a - x_b), abs(y_a - y_b)
-
-point_a = (5, 0)
-point_b = (10, 4)
-dimensions = find_width_height(point_a, point_b)
-```
-
-N.B. - In the example, the function returns a tuple. In the context of a return, or an assignment, the parenthesis around a tuple are not strictly required
 @@@
 
 ###Sets
