@@ -9,5 +9,4 @@
 [Section 4](?part=part4)
 <div class="clearfix"> </div>
 [Additional Exercises](?part=exercises)
-<div class="clearfix"> </div>
 [Contents](?part=contents)
