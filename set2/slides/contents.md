@@ -13,9 +13,9 @@ We'll be creating small programs in the text editor, implementing control flow a
 Lists, dictionaries and other built-in containers give the Python programmer tremendous power. We'll use these combined with other Python built-ins to process text files for information.
 @@@
 
-####[Part 4](?part=part4) - Higher level abstractions: object oriented and functional programming
+####[Part 4](?part=part4) - Object oriented programming
 
-What is Object-Oriented Programming and Functional Programming and how can they help make programming easier? We'll also get started on some projects that you can do with your new Python skills.
+What is Object-Oriented Programming and how can it help make programming easier? We'll also get started on some projects that you can do with your new Python skills.
 @@@
 
 ####[Exercises](?part=exercises) - Additional Exercises
