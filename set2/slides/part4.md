@@ -234,8 +234,8 @@ grid.display_grid()
         <td>Official Python Documentation</td>
     </tr>
     <tr>
-        <td>[Think Python](http://www.greenteapress.com/thinkpython/html/index.html)</td>
-        <td>Online and print book with exercises.</td>
+        <td>[Think Python Interactive](http://interactivepython.org/courselib/static/thinkcspy/index.html)</td>
+        <td>Online Book with Live Code Runner</td>
     </tr>
     <tr>
         <td>[Dive Into Python](http://www.diveintopython.net/toc/index.html)</td>
