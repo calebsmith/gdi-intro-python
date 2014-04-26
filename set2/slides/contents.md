@@ -16,3 +16,6 @@ Lists, dictionaries and other built-in containers give the Python programmer tre
 ####[Part 4](?part=part4) - Higher level abstractions: object oriented and functional programming
 
 What is Object-Oriented Programming and Functional Programming and how can they help make programming easier? We'll also get started on some projects that you can do with your new Python skills.
+@@@
+
+####[Exercises](?part=exercises) - Additional Exercises
