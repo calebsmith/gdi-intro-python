@@ -388,24 +388,6 @@ Note: Draw a diagram with bubbles
 @@@
 
 
-###Let's Develop It
-
-* Write a program that uses at least one function to solve a geometry problem
-
-* The program will generally have three steps:
-
-    * Obtain input
-    * Call a function to calculate the answer
-    * Display the answer
-
-* Hint: You can take user input with raw_input() as before, or use the example
-below to take arguments from the command line
-* Download [geometry.py](http://calebsmith.github.io/gdi-intro-python/examples/geometry.py) and use it as an example
-
-Note: Let's Develop It 15 Minutes
-@@@
-
-
 ###Import statements
 
 The **import** statement allows us to use Python code that is defined in one file in a different file, or inside of the shell.
