@@ -355,11 +355,12 @@ This is useful when the function does some work but doesn't need any parameters.
 A function can also take more than one argument separated by commas. For example:
 
 ```python
-def find_rectangle_area(width, height):
-    return width * height
+def get_birthday_greeting(name, age):
+    return "Happy birthday to " + name + " who just turned " + str(age) + "!"
 
-area = find_rectangle_area(3, 4)
-# area is set to the value 12
+greeting = get_birthday_greeting("Virginia", 16)
+print greeting
+# Happy birthday to Virginia who just turned 16!
 ```
 @@@
 
