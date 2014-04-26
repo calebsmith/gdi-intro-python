@@ -370,17 +370,17 @@ The **scope** of a variable is the area of code in which a variable is still val
 Variables defined within a function can not be used elsewhere.
 
 ```python
-def get_triangle_area(base, height):
-    rect_area = base * height
-    return rect_area / 2.0
+def get_average(a, b):
+    total = a + b
+    return total / 2.0
 
-triangle_area = get_triangle_area(10, 20)
+avg = get_average(10, 20)
 
-print triangle_area
-# 100
-print height
+print avg
+# 15
+print a
 # NameError
-print rect_area
+print total
 # NameError
 ```
 
