@@ -10,11 +10,6 @@ The default port is 8000. Supply a commandline argument for a different port.
 This serves files from the current directory on your local browser and is good
 for viewing slides easily.
 
-E.g. Links to slides for all classes can viewed by visiting:
-http://localhost:8000/
-
-on the same computer that is running the server.
-
 Usage:
 
 python server.py
@@ -41,11 +36,10 @@ except ImportError:
 
 DEFAULT_PORT = 8000
 patterns = [
-    '*.html',
-    'set*/slides/*.md',
-    'set*/*.html',
-    'images/',
-    'css/',
+    '*/*.html',
+    '*/*.md',
+    '*/images/',
+    '*/css/',
 ]
 
 
