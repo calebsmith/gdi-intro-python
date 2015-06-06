@@ -1,4 +1,4 @@
-![Girl Develop It Logo](../images/gdi_logo_badge.png)
+<img src="../images/gdi_logo_badge.png" alt="Girl Develop It Logo" style="width: 300px;"/>
 
 ###Intro to Python
 ####Menu
