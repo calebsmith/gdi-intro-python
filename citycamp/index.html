@@ -1,0 +1,93 @@
+<DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Intro to Python ~ Girl Develop It</title>
+
+        <meta name="description" content="This is the Girl Develop It Intro to Python course.">
+        <meta name="author" content="Girl Develop It">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="../reveal/css/reveal.min.css">
+        <link rel="stylesheet" href="../css/gdicool.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../css/dark.css">
+
+        <!-- If use the PDF print sheet so students can print slides-->
+        <link rel="stylesheet" href="../reveal/css/print/pdf.css" type="text/css" media="print">
+
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <!-- load the markdown file for all of the slide content -->
+                <section id="slide-content"
+                     data-separator="^@@@\n\n"
+                     data-vertical="^\n\n"
+                     data-notes="^Note:">
+                </section>
+            </div>
+            <footer>
+                <div class="copyright">
+                    Intro to Python ~ Girl Develop It ~
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="../images/cc-license.png" /></a>
+                </div>
+            </footer>
+        </div>
+
+        <script src="../reveal/lib/js/head.min.js"></script>
+        <script src="../reveal/js/reveal.min.js"></script>
+
+        <script>
+            // Utility function for parsing query params. (has some limitations
+            // WRT multi-value params, but is sufficient for determining
+            // the markdown file to use
+            function get_query_param_by_name(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+            (function() {
+                // Determine Markdown file to use by the 'part' query param.
+                var part = get_query_param_by_name('part');
+
+                if (part) {
+                    document.getElementById('slide-content').dataset.markdown = 'slides/' + part + '.md';
+                } else {
+                    // Default to using the menu
+                    document.getElementById('slide-content').dataset.markdown = 'slides/menu.md';
+                }
+                // Initialize reveal
+                // Full list of configuration options available here:
+                // https://github.com/hakimel/reveal.js#configuration
+                Reveal.initialize({
+                    controls: true,
+                    progress: true,
+                    history: true,
+                    center: true,
+                    slideNumber: true,
+
+                    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+                    // Optional libraries used to extend on reveal.js
+                    dependencies: [
+                        { src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                        { src: '../reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                        { src: '../reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                        { src: '../reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                        { src: '../reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    ]
+                });
+            })();
+        </script>
+    </body>
+</html>
