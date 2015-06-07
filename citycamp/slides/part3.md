@@ -512,7 +512,7 @@ Python provides several functions that help us work with these collections.
     </tr>
     <tr>
         <td>[New Coder](http://newcoder.io/tutorials/)</td>
-        <td>Ideas for slightly larger projects and resources to get you started. Projects include accessing API's, scraping pages, writing IRC bots, and others.</td>
+        <td>Ideas for larger projects and resources.</td>
     </tr>
     <tr>
         <td>[Girl Develop It](http://girldevelopit.com/)</td>
