@@ -15,7 +15,7 @@ Some rules
 * Have fun
 @@@
 
-###What we will cover today
+###This Session
 
 * Why Python? <!-- .element: class="fragment" -->
 * What is programming? <!-- .element: class="fragment" -->
@@ -55,8 +55,8 @@ Note: Block 1 begins - 25 minutes
 ###What is programming?</h3>
 
 * Teaching the computer to do a task
-* A program is made of one or more files of code, each of which solve part of the overall task
-* Programming code is human readable but also needs a form that the computer can run directly. This form is not human readable.
+* A program is made of one or more files of code
+* Programming code is human readable but also needs a form that the computer can run
 * Don't focus on what's "under the hood" for now. We will "drive the car" first
 @@@
 
